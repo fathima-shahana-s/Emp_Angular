@@ -2,7 +2,6 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
-
 nav {
     background-color: #333;
 }
@@ -26,4 +25,17 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #555;
+}
+
+.employee{
+    margin-bottom: 20px;
+}
+
+.attendance{
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+#b2{
+    margin-bottom: 200px;
 }
