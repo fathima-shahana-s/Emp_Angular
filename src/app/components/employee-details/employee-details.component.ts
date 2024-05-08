@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './employee-details.component.css'
 })
 export class EmployeeDetailsComponent {
+  @Input() viewMode = false;
 
+  @Input() currentTutorial: Employee = {
+    title: '',
+    description: '',
+    published: false
+  };
 }
