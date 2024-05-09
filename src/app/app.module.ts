@@ -4,6 +4,7 @@ import { EmployeeListComponent } from './components/employee-list/employee-list.
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { HomeComponent } from './components/home/home.component';
+import { ExportAttendanceComponent } from './components/export-attendance/export-attendance.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
