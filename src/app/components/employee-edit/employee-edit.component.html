@@ -1,0 +1,22 @@
+<p>employee-edit works!</p>
+
+
+<form (ngSubmit)="onSubmit()">
+    <label for="employee_id">Employee ID:</label>
+    <input type="number" id="Employee Id" name="Employee Id" [(ngModel)]="employee.employee_id" required>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="employee.name" required>
+  
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="employee.email" required>
+  
+    <label for="department">Department:</label>
+    <input type="text" id="department" name="department" [(ngModel)]="employee.dept" required>
+  
+    <label for="otherdetails">Other details:</label>
+    <input type="text" id="otherdetails" name="otherdetails" [(ngModel)]="employee.other_details" required>
+  
+    <button type="submit">Save Changes</button>
+  </form>
+  
