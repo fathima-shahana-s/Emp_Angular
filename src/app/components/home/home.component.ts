@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {MatDialog} from '@angular/material/dialog';
 import { ExportAttendanceComponent } from '../export-attendance/export-attendance.component';
 
 @Component({
@@ -9,5 +10,15 @@ import { ExportAttendanceComponent } from '../export-attendance/export-attendanc
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  constructor(public dialog: MatDialog) { }
 
+  openDialog(): void {
+    this.dialog.open(ExportAttendanceComponent, {
+      width: '250px', // You can adjust the width as per your requirement
+    });
+
+    /*dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });*/
+  }
 }

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ExportAttendanceComponent } from './components/export-attendance/export-attendance.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
@@ -19,7 +20,7 @@ const routes: Routes = [
 
 @NgModule({
   
-  imports: [ FormsModule,RouterModule.forRoot(routes) ],       
+  imports: [ FormsModule,RouterModule.forRoot(routes),MatDialogModule ],       
 
   providers: [],
 
