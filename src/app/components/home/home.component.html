@@ -1,24 +1,13 @@
+<!-- home.component.html -->
+<nav>
+  <ul>
+    <li><a href="#">Employee Management System</a></li>
+  </ul>
+</nav>
+<br>
+<button mat-button (click)="openDialog('exportAttendance')">Export CSV</button>
+<button mat-button (click)="openDialog('editEmployee')">Edit Employee</button>
 
-
- <nav>
-        <ul>
-            <li><a href="#">Employee Management System</a></li>
-        </ul>
-    </nav>
-    <br>
-    <!--
-    <section>
-        <h2 class="employee">Employees</h2>
-        <Button id="b1">Add Employee</Button>
-        <h2 class="attendance">Attendance</h2>
-        <Button id="b2">Add Attendance</Button><br><br>
-        <Button id="b3">Export CSV</Button>
-    </section>
-    -->
-    <app-add-employee></app-add-employee>
-    <button mat-button (click)="openDialog()">Export CSV</button>
-    <br><br>
-    <section>
-        <app-export-attendance></app-export-attendance>
-    </section>
-
+<br><br>
+<app-add-employee></app-add-employee>
+<app-edit-employee></app-edit-employee>

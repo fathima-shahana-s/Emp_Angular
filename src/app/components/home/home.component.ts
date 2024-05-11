@@ -1,27 +1,40 @@
 import { Component } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ExportAttendanceComponent } from '../export-attendance/export-attendance.component';
+import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { AddEmployeeComponent } from '../add-employee/add-employee.component';
 import { AddAttendanceComponent } from '../add-attendance/add-attendance.component';
 
-
 @Component({
+  standalone:true,
   selector: 'app-home',
-  standalone: true,
-  imports: [ExportAttendanceComponent,AddEmployeeComponent],
+  imports: [AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent,ExportAttendanceComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(private dialog: MatDialog) { }
 
-  openDialog(): void {
-    this.dialog.open(ExportAttendanceComponent, {
-      width: '250px', // You can adjust the width as per your requirement
-    });
+ngOnInit(): void {
 
-    /*dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });*/
+
+}
+
+
+  openDialog(dialogType: string): void {
+    if (dialogType === 'editEmployee') {
+      this.dialog.open(EditEmployeeComponent, {
+        hasBackdrop: true,
+      });
+    } else if (dialogType === 'exportAttendance') {
+      this.dialog.open(ExportAttendanceComponent, {
+        hasBackdrop: true,
+        // You can adjust the width as per your requirement
+      });
+    }
   }
+
+
 }
