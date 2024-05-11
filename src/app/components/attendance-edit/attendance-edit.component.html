@@ -1,0 +1,18 @@
+<p>attendance-edit works!</p>
+
+
+<form (ngSubmit)="onSubmit()">
+    <label for="attendance_id">Attendance ID:</label>
+    <input type="number" id="Attendance Id" name="Attendance Id" [(ngModel)]="attendance.attendance_id" required>
+
+    <label for="employee_id">Employee ID:</label>
+    <input type="number" id="Employee Id" name="Employee Id" [(ngModel)]="attendance.employee_id" required>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" [(ngModel)]="attendance.date" required>
+  
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="status" [(ngModel)]="attendance.status" required>
+  
+    <button type="submit">Save Changes</button>
+  </form>

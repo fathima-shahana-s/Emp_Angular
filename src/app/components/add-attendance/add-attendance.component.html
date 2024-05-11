@@ -1,0 +1,56 @@
+<div>
+    <div class="submit-form">
+      @if (!submitted) {
+      <div class="form-group">
+        <label for="attendance">attendance_id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="attendance"
+          required
+          [(ngModel)]="attendance.attendance_id"
+          name="attendance"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="employee">employee_id</label>
+        <input
+          class="form-control"
+          id="employee_id"
+          required
+          [(ngModel)]="attendance.employee_id"
+          name="employee"
+        />
+      </div>
+      <div class="form-group">
+        <label for="date">date</label>
+        <input
+          class="form-control"
+          id="date"
+          required
+          [(ngModel)]="attendance.date"
+          name="date"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="status">status</label>
+        <input
+          class="form-control"
+          id="status"
+          required
+          [(ngModel)]="attendance.status"
+          name="status"
+        />
+      </div>
+
+
+
+      <button (click)="saveAttendance()" class="btn btn-success">Submit</button>
+      } @else {
+      <h4>Attendance was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newAttendance()">Add</button>
+      }
+    </div>
+  </div>

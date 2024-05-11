@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Employee } from '../models/employee.model';
+import { Attendance } from '../models/attendance.model';
 
 const baseUrl = 'http://localhost:8080/api/tutorials';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
+export class AttendanceService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Employee[]> {
-    return this.http.get<Employee[]>(baseUrl);
+  getAll(): Observable<Attendance[]> {
+    return this.http.get<Attendance[]>(baseUrl);
   }
 
-  get(id: any): Observable<Employee> {
-    return this.http.get<Employee>(`${baseUrl}/${id}`);
+  get(id: any): Observable<Attendance> {
+    return this.http.get<Attendance>(`${baseUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -36,7 +36,7 @@ export class EmployeeService {
     return this.http.delete(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Employee[]> {
-    return this.http.get<Employee[]>(`${baseUrl}?title=${title}`);
+  findByTitle(title: any): Observable<Attendance[]> {
+    return this.http.get<Attendance[]>(`${baseUrl}?title=${title}`);
   }
 }

@@ -10,12 +10,13 @@ import { HomeComponent } from './components/home/home.component';
 import { ExportAttendanceComponent } from './components/export-attendance/export-attendance.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
+// import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: 'employee', component: EmployeeListComponent },
   { path: 'employee/:id', component: EmployeeDetailsComponent },
   { path: 'add', component: AddEmployeeComponent },
-  { path: 'employee/edit/:id', component: EmployeeEditComponent} 
+  { path: 'employee/edit/:id', component: EmployeeEditComponent}
 ];
 
 @NgModule({
@@ -23,10 +24,7 @@ const routes: Routes = [
   imports: [ FormsModule,RouterModule.forRoot(routes),MatDialogModule ],       
 
   providers: [],
-
-  exports: [RouterModule]
-
-  
+  exports: []
 })
-export class AppRoutingModule { }
+export class AppModule{ }
 

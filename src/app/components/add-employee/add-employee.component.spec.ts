@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './add-employee.component';
 
 describe('AddEmployeeComponent', () => {
@@ -11,7 +11,7 @@ describe('AddEmployeeComponent', () => {
       imports: [AddEmployeeComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AddEmployeeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

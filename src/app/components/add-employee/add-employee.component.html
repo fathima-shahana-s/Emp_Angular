@@ -1,1 +1,41 @@
-<p>add-employee works!</p>
+
+<form action="">
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+    <div class="form-group">
+      <label for="employee_id">employee_id</label>
+      <input type="text" class="form-control" id="employee_id" required [(ngModel)]="employee.employee_id"
+        name="employee_id" />
+    </div>
+
+    <div class="form-group">
+      <label for="dept">dept</label>
+      <input [(ngModel)]="employee.dept" class="form-control" id="dept" required name="dept" />
+    </div>
+    <div class="form-group">
+      <label for="other_details">other_details</label>
+      <input class="form-control" id="other_details" required [(ngModel)]="employee.other_details"
+        name="other_details" />
+    </div>
+
+    <div class="form-group">
+      <label for="name">name</label>
+      <input class="form-control" id="name" required [(ngModel)]="employee.name" name="name" />
+    </div>
+
+    <div class="form-group">
+      <label for="email">email</label>
+      <input class="form-control" id="email" required [(ngModel)]="employee.email" name="email" />
+    </div>
+
+
+    <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+    } @else {
+    <h4>Employee was submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newEmployee()">Add</button>
+    }
+  </div>
+</div>
+
+</form>
