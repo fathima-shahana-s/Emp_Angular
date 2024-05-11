@@ -1,10 +1,14 @@
 import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
 import { provideServerRendering } from '@angular/platform-server';
 import { appConfig } from './app.config';
+import { Employee } from './models/employee.model';
+import { EmployeeService } from './services/employee.service';
 
 const serverConfig: ApplicationConfig = {
   providers: [
-    provideServerRendering()
+    provideServerRendering(),
+    Employee,
+    EmployeeService
   ]
 };
 
