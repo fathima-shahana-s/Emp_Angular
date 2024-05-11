@@ -5,27 +5,19 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { EmployeeEditComponent } from './components/employee-edit/employee-edit.component';
 import { FormsModule } from '@angular/forms';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { ExportAttendanceComponent } from './components/export-attendance/export-attendance.component';
-
+// import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: 'employee', component: EmployeeListComponent },
   { path: 'employee/:id', component: EmployeeDetailsComponent },
   { path: 'add', component: AddEmployeeComponent },
-  { path: 'employee/edit/:id', component: EmployeeEditComponent} 
+  { path: 'employee/edit/:id', component: EmployeeEditComponent}
 ];
 
 @NgModule({
-  
-  imports: [ FormsModule,RouterModule.forRoot(routes) ],       
-
+  imports: [FormsModule, RouterModule.forRoot(routes)],
   providers: [],
-
-  exports: [RouterModule]
-
-  
+  exports: []
 })
-export class AppRoutingModule { }
+export class AppModule{ }
 
