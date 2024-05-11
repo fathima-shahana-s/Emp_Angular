@@ -8,11 +8,11 @@
           class="form-control"
           id="attendance"
           required
-          [(ngModel)]="attendance.attendance"
+          [(ngModel)]="attendance.attendance_id"
           name="attendance"
         />
       </div>
-  
+
       <div class="form-group">
         <label for="employee">employee_id</label>
         <input
@@ -33,7 +33,7 @@
           name="date"
         />
       </div>
-  
+
       <div class="form-group">
         <label for="status">status</label>
         <input
@@ -44,9 +44,9 @@
           name="status"
         />
       </div>
-  
-  
-  
+
+
+
       <button (click)="saveAttendance()" class="btn btn-success">Submit</button>
       } @else {
       <h4>Attendance was submitted successfully!</h4>
