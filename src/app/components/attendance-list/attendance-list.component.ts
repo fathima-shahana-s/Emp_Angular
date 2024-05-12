@@ -10,8 +10,8 @@ import { AttendanceService } from '../../services/attendance.service';
 })
 export class AttendanceListComponent implements OnInit {
 
-  employee!: Attendance[];
-  currentEmployee: Attendance = {};
+  attendance!: Attendance[];
+  currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
 
@@ -25,7 +25,7 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
-          this.employee = data;
+          this.attendance = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -34,16 +34,16 @@ export class AttendanceListComponent implements OnInit {
 
   refreshList(): void {
     this.retrieveAttendance();
-    this.currentEmployee = {};
+    this.currentAttendance = {};
     this.currentIndex = -1;
   }
 
-  setActiveEmployee(employee: Attendance, index: number): void {
-    this.currentEmployee = employee;
+  setActiveAttendance(attendance: Attendance, index: number): void {
+    this.currentAttendance = attendance;
     this.currentIndex = index;
   }
 
-  removeAllEmployee(): void {
+  removeAllAttendance(): void {
     this.AttendanceService.deleteAll()
       .subscribe({
         next: (res) => {
@@ -55,13 +55,13 @@ export class AttendanceListComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.currentEmployee = {};
+    this.currentAttendance = {};
     this.currentIndex = -1;
 
     this.AttendanceService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.employee = data;
+          this.attendance = data;
           console.log(data);
         },
         error: (e) => console.error(e)
