@@ -11,9 +11,13 @@
 <button mat-button (click)="openDialog('addEmployee')">Add Employee</button>
 </div>
 <br>
-<button mat-button (click)="openDialog('exportAttendance')">Export CSV</button>
+<button mat-button (click)="openDialog('exportAttendance')">Export CSV</button><br>
 <button mat-button (click)="openDialog('editEmployee')">Edit Employee</button>
 
 <br><br>
 
 <app-edit-employee></app-edit-employee>
+
+<br>
+<button mat-button (click)="openDialog('attendanceDelete')">Delete Attendance</button>
+<app-attendance-delete></app-attendance-delete>

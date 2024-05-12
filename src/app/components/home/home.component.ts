@@ -6,12 +6,13 @@ import { ExportAttendanceComponent } from '../export-attendance/export-attendanc
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 
 import { AddAttendanceComponent } from '../add-attendance/add-attendance.component';
+import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
 
 
 @Component({
   standalone:true,
   selector: 'app-home',
-  imports: [EmployeeListComponent,AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent,ExportAttendanceComponent],
+  imports: [EmployeeListComponent,AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent,ExportAttendanceComponent,AttendanceDeleteComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
