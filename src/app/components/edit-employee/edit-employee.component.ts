@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service'; 
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-employee',
@@ -10,33 +11,36 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.css']
 })
-export class EditEmployeeComponent {
-  employee: Employee;
-  submitted = false;
+export class EditEmployeeComponent implements OnInit{
+  employee: Employee = {employee_id:0, dept:'', other_details: '',name:'',email:'' };
+  
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private employeeService: EmployeeService
+  ) { }
 
-  constructor(private employeeService: EmployeeService, private employeeData: Employee) {
-    this.employee = employeeData;
+  ngOnInit(): void {
+    const idParam = this.route.snapshot.paramMap.get('employee_id');
+    const id = idParam ? +idParam : 0; // Convert to number or use a default value if null
+    this.employeeService.get(id).subscribe((employee: Employee) => {
+      this.employee = employee;
+    });
+
   }
 
-  saveEmployee(): void {
-    const data = {
-      dept: this.employee.dept,
-      email: this.employee.email,
-      name: this.employee.name,
-      other_details: this.employee.other_details,
+  onSubmit(): void {
+    this.employeeService.update(this.employee.employee_id, this.employee).subscribe(
+      () => {
+        console.log('Employee updated successfully');
+      },
+      (error) => {
+        console.error('Error updating employee:', error);
+      }
+    );
+
+    {
+      this.router.navigate(['/employee']);
     };
-
-    this.employeeService.update(this.employee.employee_id, data)
-      .subscribe({
-        next: (res: any) => {
-          console.log(res);
-          this.submitted = true;
-        },
-        error: (e: any) => console.error(e)
-      });
-  }
-
-  resetForm(): void {
-    this.submitted = false;
   }
 }

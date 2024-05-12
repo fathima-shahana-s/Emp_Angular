@@ -1,34 +1,28 @@
-<form>
-  <div>
-    <div class="submit-form">
-      <div class="form-group">
+<form (ngSubmit)="onSubmit()">
+ 
         <label for="employee_id">Employee ID</label>
         <input type="text" class="form-control" id="employee_id" required [(ngModel)]="employee.employee_id"
           name="employee_id" />
-      </div>
+   
 
-      <div class="form-group">
+      
         <label for="dept">Department</label>
         <input [(ngModel)]="employee.dept" class="form-control" id="dept" required name="dept" />
-      </div>
-      <div class="form-group">
+      
+      
         <label for="other_details">Other Details</label>
         <input class="form-control" id="other_details" required [(ngModel)]="employee.other_details"
           name="other_details" />
-      </div>
+      
 
-      <div class="form-group">
+
         <label for="name">Name</label>
         <input class="form-control" id="name" required [(ngModel)]="employee.name" name="name" />
-      </div>
+    
 
-      <div class="form-group">
+      
         <label for="email">Email</label>
         <input class="form-control" id="email" required [(ngModel)]="employee.email" name="email" />
-      </div>
-
-      <button (click)="saveEmployee()" class="btn btn-success">Save</button>
-      <button (click)="resetForm()" class="btn btn-secondary">Cancel</button>
-    </div>
-  </div>
-</form>
+      
+        <button type="submit">Save Changes</button>
+   </form>
