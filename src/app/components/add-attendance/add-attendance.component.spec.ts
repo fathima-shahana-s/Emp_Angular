@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { FormsModule } from '@angular/forms';
 import { AddAttendanceComponent } from './add-attendance.component';
 
 describe('AddAttendanceComponent', () => {
