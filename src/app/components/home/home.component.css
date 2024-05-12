@@ -1,31 +1,30 @@
 body {
-    margin: 0;
+    max-width: 800px;
+    margin: 0 auto;
     font-family: Arial, sans-serif;
-}
-nav {
-    background-color: #333;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:rgb(56, 3, 56);
 }
 
-nav ul li {
-    display: inline;
-}
+
 
 nav ul li a {
-    display: block;
-    padding: 20px;
-    color: #fff;
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    background-color: #555;
-}
+
 
 /*
 .employee{

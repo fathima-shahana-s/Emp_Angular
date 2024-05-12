@@ -4,12 +4,13 @@ import { EmployeeService } from '../../services/employee.service';
 
 @Component({
   selector: 'app-employee-list',
+  standalone: true,
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
 
-  employee?: Employee[];
+  employee!: Employee[];
   currentEmployee: Employee = {};
   currentIndex = -1;
   title = '';

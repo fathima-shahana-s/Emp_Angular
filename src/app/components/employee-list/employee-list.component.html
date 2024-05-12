@@ -1,4 +1,28 @@
-<div class="list row">
+<div class="container mt-5">
+  <h2>Employees</h2>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary" >Edit</button>
+          <button class="btn btn-sm btn-danger" >Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+<!--<div class="list row">
     <div class="col-md-8">
       <div class="input-group mb-3">
         <input
@@ -42,4 +66,4 @@
       [currentEmployee]="currentEmployee"
     ></app-employee-details>
   </div>
-</div>
+</div>-->
