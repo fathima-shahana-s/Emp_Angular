@@ -40,6 +40,10 @@ export class AddAttendanceComponent {
       });
   }
 
+  closeForm(): void {
+    this.submitted = false;
+  }
+  
   newAttendance(): void {
     this.submitted = false;
     this.attendance = {

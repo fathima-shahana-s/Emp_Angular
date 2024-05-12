@@ -1,8 +1,11 @@
+<div class="dialog">
+<form action="">
+
 <div>
     <div class="submit-form">
       @if (!submitted) {
       <div class="form-group">
-        <label for="attendance">attendance_id</label>
+        <label for="attendance">Attendance Id</label>
         <input
           type="text"
           class="form-control"
@@ -14,7 +17,7 @@
       </div>
 
       <div class="form-group">
-        <label for="employee">employee_id</label>
+        <label for="employee">Employee Id</label>
         <input
           class="form-control"
           id="employee_id"
@@ -24,7 +27,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="date">date</label>
+        <label for="date">Date</label>
         <input
           class="form-control"
           id="date"
@@ -35,7 +38,7 @@
       </div>
 
       <div class="form-group">
-        <label for="status">status</label>
+        <label for="status">Status</label>
         <input
           class="form-control"
           id="status"
@@ -46,11 +49,15 @@
       </div>
 
 
-
-      <button (click)="saveAttendance()" class="btn btn-success">Submit</button>
+      <div class="button-container">
+        <button (click)="saveAttendance()" class="btn btn-success">Submit</button>
+        <button (click)="closeForm()" class="btn btn-success">Cancel</button>
+      </div>
       } @else {
       <h4>Attendance was submitted successfully!</h4>
       <button class="btn btn-success" (click)="newAttendance()">Add</button>
       }
     </div>
   </div>
+</form>
+</div>
