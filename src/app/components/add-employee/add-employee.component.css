@@ -26,7 +26,7 @@ input[type=submit] {
 }
 
 .button-container {
-  display: flex;
+  display: flex;  
   justify-content: space-between; /* Aligns buttons horizontally */
   margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
   margin-bottom: 10px; /* Optional: Add margin for spacing below buttons */
