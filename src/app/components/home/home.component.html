@@ -7,20 +7,31 @@
 <br>
 <app-employee-list></app-employee-list>
 <br>
+<br>
+<br>
 <div class="add">
 <button mat-button (click)="openDialog('addEmployee')">Add Employee</button>
 </div>
 <br>
-<button mat-button (click)="openDialog('exportAttendance')">Export CSV</button><br>
+
 <button mat-button (click)="openDialog('editEmployee')">Edit Employee</button>
 
 
 <br>
+
 <app-attendance-list></app-attendance-list>
 <br>
-<div class="add">
+<br>
+<br>
+<div class="comb">
+
+<div class="addatt">
   <button mat-button (click)="openDialog('addAttendance')">Add Attendance</button>
   </div>
+  <div class="export">
+    <button mat-button (click)="openDialog('exportAttendance')">Export CSV</button><br>
+    </div>
+</div>
   <br>
   <button mat-button (click)="openDialog('editAttendance')">Edit Attendance</button>
 <button mat-button (click)="openDialog('attendanceDelete')">Delete Attendance</button>
