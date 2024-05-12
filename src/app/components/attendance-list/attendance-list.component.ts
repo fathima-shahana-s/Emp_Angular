@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-attendance-list',
   standalone: true,
+  imports:[CommonModule],
   templateUrl: './attendance-list.component.html',
   styleUrls: ['./attendance-list.component.css']
 })
 export class AttendanceListComponent implements OnInit {
 
-  attendance!: Attendance[];
+  employees: Attendance[]=[];
   currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
@@ -25,7 +27,7 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
-          this.attendance = data;
+          this.employees = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -61,7 +63,7 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.attendance = data;
+          this.employees = data;
           console.log(data);
         },
         error: (e) => console.error(e)
