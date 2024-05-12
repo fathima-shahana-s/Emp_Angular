@@ -13,8 +13,12 @@
 <button mat-button (click)="openDialog('addEmployee')">Add Employee</button>
 </div>
 <br>
-<button mat-button (click)="openDialog('editEmployee')">Edit Employee</button>
-<button mat-button (click)="openDialog('deleteEmployee')">Delete Employee</button>
+<div class="editemp">
+<button mat-button (click)="openDialog('editEmployee')">Edit</button>
+</div>
+<div class="dltemp">
+<button mat-button (click)="openDialog('deleteEmployee')">Delete</button>
+</div>
 
 <br>
 
@@ -35,4 +39,6 @@
   <div class="editatt">
   <button mat-button (click)="openDialog('editAttendance')">Edit</button>
   </div>
-<button mat-button (click)="openDialog('attendanceDelete')">Delete Attendance</button>
+  <div class="dltatt">
+  <button mat-button (click)="openDialog('attendanceDelete')">Delete</button>
+  </div>

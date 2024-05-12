@@ -61,7 +61,30 @@ nav ul li a {
     margin-bottom: 10px;
   }
 
+  .dltatt button[mat-button]{
+    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    color: #fff; /* White text color for better contrast */
+    border-radius: 4px; /* Rounded corners */
+    margin-left: 75px;
+    padding: 5px 10px; /* Add some padding for spacing */
+  }
 
+  .editemp button[mat-button]{
+    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    color: #fff; /* White text color for better contrast */
+    border-radius: 4px; /* Rounded corners */
+    margin-left: 75px;
+    padding: 5px 10px; /* Add some padding for spacing */
+  }
+
+  
+  .dltemp button[mat-button]{
+    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    color: #fff; /* White text color for better contrast */
+    border-radius: 4px; /* Rounded corners */
+    margin-left: 75px;
+    padding: 5px 10px; /* Add some padding for spacing */
+  }
 /*
 .employee{
     margin-bottom: 20px;
