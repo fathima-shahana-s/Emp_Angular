@@ -3,7 +3,7 @@ import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'app-attendance-list',
   standalone: true,
   templateUrl: './attendance-list.component.html',
   styleUrls: ['./attendance-list.component.css']
@@ -18,10 +18,10 @@ export class AttendanceListComponent implements OnInit {
   constructor(private AttendanceService: AttendanceService) { }
 
   ngOnInit(): void {
-    this.retrieveEmployee();
+    this.retrieveAttendance();
   }
 
-  retrieveEmployee(): void {
+  retrieveAttendance(): void {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
@@ -33,7 +33,7 @@ export class AttendanceListComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveEmployee();
+    this.retrieveAttendance();
     this.currentEmployee = {};
     this.currentIndex = -1;
   }
