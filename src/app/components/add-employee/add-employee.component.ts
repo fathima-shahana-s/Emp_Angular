@@ -3,6 +3,7 @@ import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
 
+
 @Component({
   standalone:true,
   selector: 'app-add-employee',
@@ -40,7 +41,11 @@ export class AddEmployeeComponent {
         error: (e: any) => console.error(e)
       });
   }
+  closeForm(): void {
+    this.submitted = false;
 
+  }
+  
   newEmployee(): void {
     this.submitted = false;
     this.employee = {
@@ -50,6 +55,7 @@ export class AddEmployeeComponent {
       name: '',
       other_details: '',
     };
+    
   }
 
 }

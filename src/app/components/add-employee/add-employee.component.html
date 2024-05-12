@@ -1,4 +1,5 @@
 
+<div class="dialog">
 <form action="">
 <div>
   <div class="submit-form">
@@ -30,12 +31,19 @@
     </div>
 
 
-    <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+    <div class="button-container">
+      <button (click)="saveEmployee()" class="btn btn-success">Submit</button>
+      <button (click)="closeForm()" class="btn btn-success">Cancel</button>
+    </div>
+    
     } @else {
     <h4>Employee was submitted successfully!</h4>
     <button class="btn btn-success" (click)="newEmployee()">Add</button>
+   
+
     }
   </div>
 </div>
 
 </form>
+</div>

@@ -7,9 +7,13 @@
 <br>
 <app-employee-list></app-employee-list>
 <br>
+<div class="add">
+<button mat-button (click)="openDialog('addEmployee')">Add Employee</button>
+</div>
+<br>
 <button mat-button (click)="openDialog('exportAttendance')">Export CSV</button>
 <button mat-button (click)="openDialog('editEmployee')">Edit Employee</button>
 
 <br><br>
-<app-add-employee></app-add-employee>
+
 <app-edit-employee></app-edit-employee>
