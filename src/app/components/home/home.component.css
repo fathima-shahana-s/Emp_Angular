@@ -39,6 +39,14 @@ nav ul li a {
     padding: 5px 10px; /* Add some padding for spacing */
   }
 
+  .editatt button[mat-button]{
+    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    color: #fff; /* White text color for better contrast */
+    border-radius: 4px; /* Rounded corners */
+    margin-left: 75px;
+    padding: 5px 10px; /* Add some padding for spacing */
+  }
+
   .export button[mat-button]{
     background-color: red; /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */

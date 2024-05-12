@@ -1,16 +1,50 @@
-
+<div class="dialog">
 <form (ngSubmit)="onSubmit()">
-    <label for="attendance_id">Attendance ID:</label>
-    <input type="number" id="Attendance Id" name="Attendance Id" [(ngModel)]="attendance.attendance_id" required>
+  <div class="submit-form">
+    <div class="form-group">
+      <label for="attendance">Attendance Id</label>
+      <input
+        type="text"
+        class="form-control"
+        id="attendance"
+        required
+        [(ngModel)]="attendance.attendance_id"
+        name="attendance"
+      />
+    </div>
 
-    <label for="employee_id">Employee ID:</label>
-    <input type="number" id="Employee Id" name="Employee Id" [(ngModel)]="attendance.employee_id" required>
+    <div class="form-group">
+      <label for="employee">Employee Id</label>
+      <input
+        class="form-control"
+        id="employee_id"
+        required
+        [(ngModel)]="attendance.employee_id"
+        name="employee"
+      />
+    </div>
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input
+        class="form-control"
+        id="date"
+        required
+        [(ngModel)]="attendance.date"
+        name="date"
+      />
+    </div>
 
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" [(ngModel)]="attendance.date" required>
-  
-    <label for="status">Status:</label>
-    <input type="text" id="status" name="status" [(ngModel)]="attendance.status" required>
+    <div class="form-group">
+      <label for="status">Status</label>
+      <input
+        class="form-control"
+        id="status"
+        required
+        [(ngModel)]="attendance.status"
+        name="status"
+      />
+    </div>
   
     <button type="submit">Save Changes</button>
-  </form>
+  
+</div>
