@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-employee-list',
   standalone: true,
+  imports:[CommonModule],
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
 
-  employee!: Employee[];
+  employees: Employee[]=[];
   currentEmployee: Employee = {};
   currentIndex = -1;
   title = '';
@@ -25,7 +27,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.getAll()
       .subscribe({
         next: (data) => {
-          this.employee = data;
+          this.employees = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -61,7 +63,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.employee = data;
+          this.employees = data;
           console.log(data);
         },
         error: (e) => console.error(e)
