@@ -57,6 +57,11 @@ ngOnInit(): void {
         // You can adjust the width as per your requirement
       });
     }
+    else if(dialogType=='attendanceDelete') {
+      this.dialog.open(AttendanceDeleteComponent, {
+        hasBackdrop:true,
+      });
+    }
   }
 
 
