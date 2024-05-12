@@ -3,29 +3,29 @@ import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'app-attendance-list',
   standalone: true,
   templateUrl: './attendance-list.component.html',
   styleUrls: ['./attendance-list.component.css']
 })
 export class AttendanceListComponent implements OnInit {
 
-  employee!: Attendance[];
-  currentEmployee: Attendance = {};
+  attendance!: Attendance[];
+  currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
 
   constructor(private AttendanceService: AttendanceService) { }
 
   ngOnInit(): void {
-    this.retrieveEmployee();
+    this.retrieveAttendance();
   }
 
-  retrieveEmployee(): void {
+  retrieveAttendance(): void {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
-          this.employee = data;
+          this.attendance = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -33,17 +33,17 @@ export class AttendanceListComponent implements OnInit {
   }
 
   refreshList(): void {
-    this.retrieveEmployee();
-    this.currentEmployee = {};
+    this.retrieveAttendance();
+    this.currentAttendance = {};
     this.currentIndex = -1;
   }
 
-  setActiveEmployee(employee: Attendance, index: number): void {
-    this.currentEmployee = employee;
+  setActiveAttendance(attendance: Attendance, index: number): void {
+    this.currentAttendance = attendance;
     this.currentIndex = index;
   }
 
-  removeAllEmployee(): void {
+  removeAllAttendance(): void {
     this.AttendanceService.deleteAll()
       .subscribe({
         next: (res) => {
@@ -55,13 +55,13 @@ export class AttendanceListComponent implements OnInit {
   }
 
   searchTitle(): void {
-    this.currentEmployee = {};
+    this.currentAttendance = {};
     this.currentIndex = -1;
 
     this.AttendanceService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.employee = data;
+          this.attendance = data;
           console.log(data);
         },
         error: (e) => console.error(e)
