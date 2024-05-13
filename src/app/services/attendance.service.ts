@@ -4,7 +4,8 @@ import { Observable } from 'rxjs';
 import { Attendance } from '../models/attendance.model';
 
 
-const baseUrl = 'http://127.0.0.1:8080/api/attendance';
+const baseUrl = 'http://localhost:8080/api/attendance';
+
 
 @Injectable({
   providedIn: 'root'
