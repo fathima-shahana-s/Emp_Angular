@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
 })
 export class AttendanceListComponent implements OnInit {
 
-  employees: Attendance[]=[];
+  attendance: Attendance[]=[];
   currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
@@ -27,7 +27,7 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
-          this.employees = data;
+          this.attendance = data;
           console.log(data);
         },
         error: (e) => console.error(e)
@@ -63,7 +63,7 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.employees = data;
+          this.attendance = data;
           console.log(data);
         },
         error: (e) => console.error(e)
