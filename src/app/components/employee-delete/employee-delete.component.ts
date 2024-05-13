@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Employee } from '../../models/employee.model'; 
+import { Employee } from '../../models/employee.model';
 
 @Component({
   selector: 'app-employee-delete',
@@ -22,11 +22,11 @@ export class EmployeeDeleteComponent implements OnInit {
   }
 
   onDelete(): void {
-    console.log('Employee deleted:', this.employee); 
-    this.dialogRef.close(true); 
+    console.log('Employee deleted:', this.employee);
+    this.dialogRef.close(true);
   }
 
   onClose(): void {
-    this.dialogRef.close(false); 
+    this.dialogRef.close(false);
   }
 }
