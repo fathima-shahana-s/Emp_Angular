@@ -8,6 +8,7 @@ import { AttendanceListComponent } from '../attendance-list/attendance-list.comp
 import { AddAttendanceComponent } from '../add-attendance/add-attendance.component';
 import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.component';
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
+import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 
 
 @Component({
@@ -59,6 +60,11 @@ ngOnInit(): void {
     }
     else if(dialogType=='attendanceDelete') {
       this.dialog.open(AttendanceDeleteComponent, {
+        hasBackdrop:true,
+      });
+    }
+    else if(dialogType=='deleteEmployee') {
+      this.dialog.open(EmployeeDeleteComponent, {
         hasBackdrop:true,
       });
     }
