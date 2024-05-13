@@ -1,8 +1,16 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 import { CommonModule } from '@angular/common';
-
+import { MatDialog } from '@angular/material/dialog';
+import { ExportAttendanceComponent } from '../export-attendance/export-attendance.component';
+import { AddEmployeeComponent } from '../add-employee/add-employee.component';
+import { AddAttendanceComponent } from '../add-attendance/add-attendance.component';
+import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.component';
+import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
+import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
+import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 @Component({
   selector: 'app-attendance-list',
   standalone: true,
@@ -12,12 +20,12 @@ import { CommonModule } from '@angular/common';
 })
 export class AttendanceListComponent implements OnInit {
 
-  attendance: Attendance[]=[];
+  attendances: Attendance[]=[];
   currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
 
-  constructor(private AttendanceService: AttendanceService) { }
+  constructor(private AttendanceService: AttendanceService, private dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.retrieveAttendance();
@@ -27,8 +35,8 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
-          this.attendance = data;
-          console.log(data);
+          this.attendances = data;
+          console.log(this.attendances.length);
         },
         error: (e) => console.error(e)
       });
@@ -63,11 +71,53 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.findByTitle(this.title)
       .subscribe({
         next: (data) => {
-          this.attendance = data;
+          this.attendances = data;
           console.log(data);
         },
         error: (e) => console.error(e)
       });
   }
+
+  openDialog(dialogType: string): void {
+    if (dialogType === 'editEmployee') {
+      this.dialog.open(EditEmployeeComponent, {
+        hasBackdrop: true,
+      });
+    } else if (dialogType === 'exportAttendance') {
+      this.dialog.open(ExportAttendanceComponent, {
+        hasBackdrop: true,
+        // You can adjust the width as per your requirement
+      });
+    }
+    else if (dialogType === 'addEmployee') {
+      this.dialog.open(AddEmployeeComponent, {
+        hasBackdrop: true,
+        // You can adjust the width as per your requirement
+      });
+    }
+    else if (dialogType === 'addAttendance') {
+      this.dialog.open(AddAttendanceComponent, {
+        hasBackdrop: true,
+        // You can adjust the width as per your requirement
+      });
+    }
+    else if (dialogType === 'editAttendance') {
+      this.dialog.open(AttendanceEditComponent, {
+        hasBackdrop: true,
+        // You can adjust the width as per your requirement
+      });
+    }
+    else if (dialogType == 'attendanceDelete') {
+      this.dialog.open(AttendanceDeleteComponent, {
+        hasBackdrop: true,
+      });
+    }
+    else if (dialogType == 'deleteEmployee') {
+      this.dialog.open(EmployeeDeleteComponent, {
+        hasBackdrop: true,
+      });
+    }
+  }
+
 
 }

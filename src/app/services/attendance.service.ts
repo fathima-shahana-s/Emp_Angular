@@ -3,16 +3,19 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Attendance } from '../models/attendance.model';
 
+
 const baseUrl = 'http://localhost:8080/api/attendance';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AttendanceService {
-
+  data: any
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Attendance[]> {
+   this.data = this.http.get<Attendance[]>(baseUrl)
     return this.http.get<Attendance[]>(baseUrl);
   }
 

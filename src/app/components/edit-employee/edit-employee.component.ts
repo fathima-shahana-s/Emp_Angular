@@ -1,8 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { Employee } from '../../models/employee.model';
-import { EmployeeService } from '../../services/employee.service'; 
+import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-employee',
@@ -13,11 +14,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class EditEmployeeComponent implements OnInit{
   employee: Employee = {employee_id:0, dept:'', other_details: '',name:'',email:'' };
-  
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private dialog :MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -43,4 +45,9 @@ export class EditEmployeeComponent implements OnInit{
       this.router.navigate(['/employee']);
     };
   }
+
+
+
+
+
 }
