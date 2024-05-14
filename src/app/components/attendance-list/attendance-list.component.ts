@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
@@ -34,8 +35,12 @@ export class AttendanceListComponent implements OnInit {
     this.AttendanceService.getAll()
       .subscribe({
         next: (data) => {
-          this.attendances = data;
-          console.log(this.attendances.length);
+          if(data.status==200){
+            this.attendances = data.result;
+          }
+          else{
+            console.error("Error: Data status is not 200");
+          }
         },
         error: (e) => console.error(e)
       });

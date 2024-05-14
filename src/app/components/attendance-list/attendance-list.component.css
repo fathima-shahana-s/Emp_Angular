@@ -1,62 +1,62 @@
 h2 {
+  text-align: left;
+}
+
+/* Button styles */
+.btn {
+  margin-bottom: 10px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+
+.list {
     text-align: left;
+    max-width: 750px;
+    margin: auto;
   }
 
-  /* Button styles */
-  .btn {
-    margin-bottom: 10px;
-  }
+    .comb {
+  display: flex;
+  justify-content: space-between; /* Aligns buttons horizontally */
+  margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
+  margin-bottom: 10px;
+}
 
-  /* Table styles */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+.dltatt button[mat-button]{
+  background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+  color: #fff; /* White text color for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 5px;
+  padding: 5px 10px; /* Add some padding for spacing */
+}
 
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-
-  th {
-    background-color: #f2f2f2;
-  }
-
-
-  .list {
-      text-align: left;
-      max-width: 750px;
-      margin: auto;
-    }
-
-      .comb {
-    display: flex;
-    justify-content: space-between; /* Aligns buttons horizontally */
-    margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
-    margin-bottom: 10px;
-  }
-
-  .dltatt button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 5px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-
-  .editemp button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 5px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
+.editemp button[mat-button]{
+  background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+  color: #fff; /* White text color for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 5px;
+  padding: 5px 10px; /* Add some padding for spacing */
+}
 
 
-  .dltemp button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 5px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
+.dltemp button[mat-button]{
+  background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+  color: #fff; /* White text color for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 5px;
+  padding: 5px 10px; /* Add some padding for spacing */
+}
