@@ -14,9 +14,9 @@ export class AttendanceService {
   data: any
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Attendance[]> {
-   this.data = this.http.get<Attendance[]>(baseUrl)
-    return this.http.get<Attendance[]>(baseUrl);
+  getAll(): Observable<any> {
+   //this.data = this.http.get<Attendance[]>(baseUrl)
+    return this.http.get<any>(baseUrl);
   }
 
   get(id: any): Observable<Attendance> {
