@@ -40,7 +40,7 @@ nav ul li a {
   }
 
   .editatt button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    background-color: rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
     margin-left: 75px;
@@ -70,7 +70,7 @@ nav ul li a {
   }
 
   .editemp button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    background-color: rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
     margin-left: 75px;

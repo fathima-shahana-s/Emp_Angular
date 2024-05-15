@@ -49,7 +49,10 @@ export class EmployeeListComponent implements OnInit {
     //Add '${implements OnChanges}' to the class.
 
   }
-
+  
+  updateemployee(emp: Employee): void {
+    this.employeeDataService.passEmployeeData(emp);
+  }
 
 
   retrieveEmployee(): void {
