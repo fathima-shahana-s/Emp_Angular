@@ -30,6 +30,7 @@ export class AddEmployeeComponent {
 
 
   saveEmployee(): void {
+
     const data = {
       employee_id: this.employee.employee_id,
       dept: this.employee.dept,
@@ -38,7 +39,7 @@ export class AddEmployeeComponent {
       other_details: this.employee.other_details,
     };
 
-    this.employeeService.create(data)
+    this.employeeService.create(this.employee)
       .subscribe({
         next: (res: any) => {
           console.log(res);
@@ -48,6 +49,7 @@ export class AddEmployeeComponent {
         error: (e: any) => console.error(e)
       });
   }
+
   closeForm(): void {
     this.submitted = false;
     this.dialogRef.close(false);

@@ -9,6 +9,8 @@ import { AddAttendanceComponent } from '../add-attendance/add-attendance.compone
 import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.component';
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
+import { EmployeeDataService } from 'src/app/services/employeedata.service';
+import { Employee } from 'src/app/models/employee.model';
 
 
 @Component({
@@ -21,13 +23,16 @@ import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.comp
 
 
 export class HomeComponent {
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,private employeeDataService:EmployeeDataService) { }
 
   ngOnInit(): void {
 
 
   }
-  
+
+
+
+
   openDialog(dialogType: string): void {
     if (dialogType === 'editEmployee') {
       this.dialog.open(EditEmployeeComponent, {
