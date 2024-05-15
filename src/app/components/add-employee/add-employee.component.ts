@@ -26,6 +26,7 @@ export class AddEmployeeComponent {
 
   saveEmployee(): void {
     const data = {
+      employee_id:this.employee.employee_id,
       dept: this.employee.dept,
       email: this.employee.email,
       name: this.employee.name,
@@ -45,7 +46,7 @@ export class AddEmployeeComponent {
     this.submitted = false;
 
   }
-  
+
   newEmployee(): void {
     this.submitted = false;
     this.employee = {
@@ -55,7 +56,7 @@ export class AddEmployeeComponent {
       name: '',
       other_details: '',
     };
-    
+
   }
 
 }

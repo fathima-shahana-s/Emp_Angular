@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,Input } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./edit-employee.component.css']
 })
 export class EditEmployeeComponent implements OnInit{
+  
   employee: Employee = {employee_id:0, dept:'', other_details: '',name:'',email:'' };
 
   constructor(
@@ -23,8 +24,8 @@ export class EditEmployeeComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('employee_id');
-    const id = idParam ? +idParam : 0; // Convert to number or use a default value if null
+    const idParam = this.route.snapshot.paramMap.get('employee_id'); //
+    const id = idParam ? + idParam : 0; // Convert to number or use a default value if null
     this.employeeService.get(id).subscribe((employee: Employee) => {
       this.employee = employee;
     });
