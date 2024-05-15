@@ -12,7 +12,7 @@
     <input type="text" id="month" name="month" required [(ngModel)]="exportatt.month">
   </div>
   <button type="button" (click)="exportcsv()">Export</button>
-  <button type="button">Cancel</button>
+  <button type="button" (click)="onClose()">Cancel</button>
 </form>
 
 
