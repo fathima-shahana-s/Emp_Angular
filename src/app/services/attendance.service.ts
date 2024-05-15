@@ -5,6 +5,7 @@ import { Attendance } from '../models/attendance.model';
 
 
 const baseUrl = 'http://localhost:8080/api/attendance';
+const baseurl='http://localhost:8080/api/getcsv';
 
 
 @Injectable({
@@ -41,5 +42,9 @@ export class AttendanceService {
 
   findByTitle(title: any): Observable<Attendance[]> {
     return this.http.get<Attendance[]>(`${baseUrl}?title=${title}`);
+  }
+
+  getAttendance(employee_id:any,month:any,):Observable<any[]>{
+    return this.http.get<any[]>(`${baseurl}?employee_id=${employee_id}?month=${month}`);
   }
 }
