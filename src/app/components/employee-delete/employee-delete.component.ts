@@ -22,6 +22,7 @@ export class EmployeeDeleteComponent implements OnInit {
   }
 
   onDelete(): void {
+    console.log(this.data);
     console.log('Employee deleted:', this.employee);
     this.dialogRef.close(true);
   }

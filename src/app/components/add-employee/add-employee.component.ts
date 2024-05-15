@@ -46,7 +46,7 @@ export class AddEmployeeComponent {
     this.submitted = false;
 
   }
-  
+
   newEmployee(): void {
     this.submitted = false;
     this.employee = {
@@ -56,7 +56,7 @@ export class AddEmployeeComponent {
       name: '',
       other_details: '',
     };
-    
+
   }
 
 }

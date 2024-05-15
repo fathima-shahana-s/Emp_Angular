@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Attendance } from '../models/attendance.model';
-
+import { saveAs } from 'file-saver-es';
 
 const baseUrl = 'http://localhost:8080/api/attendance';
 const baseurl='http://localhost:8080/api/getcsv';
@@ -44,7 +44,16 @@ export class AttendanceService {
     return this.http.get<Attendance[]>(`${baseUrl}?title=${title}`);
   }
 
-  getAttendance(employee_id:any,month:any,):Observable<any[]>{
-    return this.http.get<any[]>(`${baseurl}?employee_id=${employee_id}?month=${month}`);
+  public downloadExcel(data:any): void {
+    const url: string = '[api endpoint here ]';
+    this.http.post(url, data.body, { responseType: 'blob' })
+      .subscribe((response: Blob) => saveAs(response, data.fileName + '.xlsx'));
+  }
+  getAttendance(employee_id: any, month: any,): Observable<Blob>{
+    console.log()
+    // this.http.get(`${baseurl}?employee_id=${employee_id}&month=${month}`, { responseType: 'blob' })
+    //   .subscribe((response: Blob) => saveAs(response, 'data' + '.csv'));
+
+    return this.http.get(`${baseurl}?employee_id=${employee_id}&month=${month}`, { responseType: 'blob' });
   }
 }
