@@ -3,6 +3,7 @@ import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 import { FormsModule } from '@angular/forms';
 import { AttendanceDataService } from '../../services/attendancedata.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
 
@@ -21,7 +22,9 @@ export class AddAttendanceComponent {
   };
   submitted = false;
 
-  constructor(private attendanceService: AttendanceService,private attendanceDataService: AttendanceDataService) { }
+  constructor(
+    public dialogRef: MatDialogRef<AddAttendanceComponent>,
+    private attendanceService: AttendanceService,private attendanceDataService: AttendanceDataService) { }
 
   saveAttendance(): void {
     const data = {
@@ -43,6 +46,7 @@ export class AddAttendanceComponent {
 
   closeForm(): void {
     this.submitted = false;
+    this.dialogRef.close(false);
   }
   
   newAttendance(): void {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -22,7 +23,9 @@ export class AddEmployeeComponent {
   };
   submitted = false;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(
+    public dialogRef: MatDialogRef<AddEmployeeComponent>,
+    private employeeService: EmployeeService) { }
 
   saveEmployee(): void {
     const data = {
@@ -44,6 +47,7 @@ export class AddEmployeeComponent {
   }
   closeForm(): void {
     this.submitted = false;
+    this.dialogRef.close(false);
 
   }
 
