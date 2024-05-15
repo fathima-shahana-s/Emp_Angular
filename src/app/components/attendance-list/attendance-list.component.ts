@@ -11,6 +11,8 @@ import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.comp
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
+import { AttendanceDataService } from '../../services/attendancedata.service';
+
 @Component({
   selector: 'app-attendance-list',
   standalone: true,
@@ -25,10 +27,17 @@ export class AttendanceListComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
-  constructor(private AttendanceService: AttendanceService, private dialog : MatDialog) { }
+  constructor(private AttendanceService: AttendanceService, private dialog : MatDialog,private attendanceDataService: AttendanceDataService) { }
 
   ngOnInit(): void {
     this.retrieveAttendance();
+    this.attendanceDataService.attendanceAdded$.subscribe((added) => {
+      if (added) {
+        this.refreshList();
+        this.attendanceDataService.setAttendanceAdded(false); // Reset flag
+      }
+    });
+
   }
 
   retrieveAttendance(): void {

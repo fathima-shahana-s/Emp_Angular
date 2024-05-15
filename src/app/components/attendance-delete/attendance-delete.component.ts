@@ -16,6 +16,7 @@ export class AttendanceDeleteComponent {
   attendance: Attendance = {attendance_id: 0, employee_id: 0, date: new Date(), status: '' };
 
   constructor(
+    public dialogRef: MatDialogRef<AttendanceDeleteComponent>,
     private attendanceService: AttendanceService,
     private route: ActivatedRoute,
     private router: Router) { }
@@ -36,6 +37,9 @@ export class AttendanceDeleteComponent {
           },
           error: (e) => console.error(e)
         });
+    }
+    onClose(): void {
+      this.dialogRef.close(false);
     }
   
 }
