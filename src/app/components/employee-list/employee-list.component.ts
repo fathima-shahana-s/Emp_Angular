@@ -10,6 +10,7 @@ import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.comp
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
+import { EmployeeDataService } from 'src/app/services/employeedata.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -25,10 +26,18 @@ export class EmployeeListComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
-  constructor(private employeeService: EmployeeService, private dialog :MatDialog) { }
+  constructor(private employeeService: EmployeeService, private dialog :MatDialog,private employeedataService: EmployeeDataService,) { }
 
   ngOnInit(): void {
     this.retrieveEmployee();
+    this.employeedataService.employeeAdded$.subscribe(
+      (added) => {
+        if (added) {
+          this.refreshList();
+          this.employeedataService.setEmployeeAdded(false); // Reset employeeAdded after update
+        }
+      }
+    );
   }
 
   retrieveEmployee(): void {

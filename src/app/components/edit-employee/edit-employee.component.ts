@@ -43,6 +43,7 @@ export class EditEmployeeComponent implements OnInit{
     this.employeeService.update(this.employee.employee_id, this.employee).subscribe(
       () => {
         console.log('Employee updated successfully');
+        this.employeedataService.setEmployeeAdded(true);
       },
       (error) => {
         console.error('Error updating employee:', error);
