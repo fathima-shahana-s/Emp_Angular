@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 import { FormsModule } from '@angular/forms';
-
+import { AttendanceDataService } from '../../services/attendancedata.service';
 
 @Component({
 
@@ -21,7 +21,7 @@ export class AddAttendanceComponent {
   };
   submitted = false;
 
-  constructor(private attendanceService: AttendanceService) { }
+  constructor(private attendanceService: AttendanceService,private attendanceDataService: AttendanceDataService) { }
 
   saveAttendance(): void {
     const data = {
@@ -35,6 +35,7 @@ export class AddAttendanceComponent {
         next: (res: any) => {
           console.log(res);
           this.submitted = true;
+          this.attendanceDataService.setAttendanceAdded(true);
         },
         error: (e: any) => console.error(e)
       });

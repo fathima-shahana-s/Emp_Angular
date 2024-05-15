@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
-import { EmployeeDataService } from '../../services/employeedata.service';
+
 
 @Component({
   standalone:true,
@@ -22,7 +22,7 @@ export class AddEmployeeComponent {
   };
   submitted = false;
 
-  constructor(private employeeService: EmployeeService,private employeeDataService: EmployeeDataService) { }
+  constructor(private employeeService: EmployeeService) { }
 
   saveEmployee(): void {
     const data = {
@@ -38,7 +38,6 @@ export class AddEmployeeComponent {
         next: (res: any) => {
           console.log(res);
           this.submitted = true;
-          this.employeeDataService.setEmployeeAdded(true);
         },
         error: (e: any) => console.error(e)
       });
