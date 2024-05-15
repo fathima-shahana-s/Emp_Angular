@@ -10,7 +10,6 @@ import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.comp
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
-import { EmployeeDataService } from '../../services/employeedata.service';
 
 @Component({
   selector: 'app-employee-list',
@@ -26,40 +25,18 @@ export class EmployeeListComponent implements OnInit {
   currentIndex = -1;
   title = '';
 
-  constructor(private employeeService: EmployeeService, private dialog :MatDialog,private employeeDataService: EmployeeDataService) { }
+  constructor(private employeeService: EmployeeService, private dialog :MatDialog) { }
 
   ngOnInit(): void {
     this.retrieveEmployee();
-    this.employeeDataService.employeeAdded$.subscribe((added) => {
-      if (added) {
-        console.log("added new emp")
-        this.refreshList();
-        this.employeeDataService.setEmployeeAdded(false); // Reset flag
-      }
-    });
   }
-  ngOnChanges(): void {
-    this.employeeDataService.employeeAdded$.subscribe((added) => {
-      if (added) {
-        this.refreshList();
-        this.employeeDataService.setEmployeeAdded(false); // Reset flag
-      }
-    });
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
-
-  }
-  
-  updateemployee(emp: Employee): void {
-    this.employeeDataService.passEmployeeData(emp);
-  }
-
 
   retrieveEmployee(): void {
     this.employeeService.getAll()
       .subscribe({
         next: (data) => {
           this.employees = data;
+          console.log(data);
         },
         error: (e) => console.error(e)
       });
