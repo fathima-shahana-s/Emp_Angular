@@ -3,14 +3,16 @@ import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
 import { EmployeeDataService } from 'src/app/services/employeedata.service';
+import { MatDialogRef } from '@angular/material/dialog';
+
 
 
 @Component({
-  standalone:true,
+  standalone: true,
   selector: 'app-add-employee',
   templateUrl: './add-employee.component.html',
   styleUrls: ['./add-employee.component.css'],
-  imports:[FormsModule]
+  imports: [FormsModule]
 })
 export class AddEmployeeComponent {
 
@@ -23,11 +25,13 @@ export class AddEmployeeComponent {
   };
   submitted = false;
 
-  constructor(private employeeService: EmployeeService, private employeedataservice :EmployeeDataService) { }
+
+  constructor(private employeeService: EmployeeService, private employeedataservice: EmployeeDataService, public dialogRef: MatDialogRef<AddEmployeeComponent>,) { }
+
 
   saveEmployee(): void {
     const data = {
-      employee_id:this.employee.employee_id,
+      employee_id: this.employee.employee_id,
       dept: this.employee.dept,
       email: this.employee.email,
       name: this.employee.name,
@@ -46,6 +50,7 @@ export class AddEmployeeComponent {
   }
   closeForm(): void {
     this.submitted = false;
+    this.dialogRef.close(false);
 
   }
 
