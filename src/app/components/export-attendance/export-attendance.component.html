@@ -4,14 +4,14 @@
 
 <form>
   <div>
-    <label for="employeeId">Employee ID:</label>
-    <input type="text" id="employeeId" name="employeeId" required #employeeId>
+    <label for="employee_id">Employee ID:</label>
+    <input type="text" id="employee_id" name="employee_id" required [(ngModel)]="exportatt.employee_id">
   </div>
   <div>
     <label for="month">Month:</label>
-    <input type="text" id="month" name="month" required #month>
+    <input type="text" id="month" name="month" required [(ngModel)]="exportatt.month">
   </div>
-  <button type="button">Export</button>
+  <button type="button" (click)="exportcsv()">Export</button>
   <button type="button">Cancel</button>
 </form>
 
