@@ -45,7 +45,6 @@ export class AddEmployeeComponent {
   }
   closeForm(): void {
     this.submitted = false;
-
   }
   
   newEmployee(): void {
@@ -61,3 +60,4 @@ export class AddEmployeeComponent {
   }
 
 }
+//EmployeeTest
