@@ -21,6 +21,7 @@ export class ExportAttendanceComponent {
   };
 
   constructor(
+    public dialogRef: MatDialogRef<ExportAttendanceComponent>,
     private attendanceService: AttendanceService
   ) { }
 
@@ -34,5 +35,8 @@ export class ExportAttendanceComponent {
     });
   }
 
+  onClose(): void {
+    this.dialogRef.close(false);
+  }
 
 }

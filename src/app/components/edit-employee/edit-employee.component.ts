@@ -4,6 +4,7 @@ import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { EmployeeDataService } from 'src/app/services/employeedata.service';
 
 @Component({
   selector: 'app-edit-employee',
@@ -13,23 +14,29 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./edit-employee.component.css']
 })
 export class EditEmployeeComponent implements OnInit{
-  
-  employee: Employee = {employee_id:0, dept:'', other_details: '',name:'',email:'' };
+
+  employee: Employee = {};
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private employeeService: EmployeeService,
+    private employeedataService:EmployeeDataService,
     private dialog :MatDialog
-  ) { }
+  ) {
+    // this.employee = this.employeedataService.employee;
+  }
 
   ngOnInit(): void {
-    const idParam = this.route.snapshot.paramMap.get('employee_id'); //
-    const id = idParam ? + idParam : 0; // Convert to number or use a default value if null
-    this.employeeService.get(id).subscribe((employee: Employee) => {
+    this.employee = this.employeedataService.employee;
+    console.log(this.employee)
+    this.employeeService.get(this.employee.employee_id).subscribe((employee: Employee) => {
       this.employee = employee;
     });
 
+  }
+  ngOnChanges(): void {
+    this.employee = this.employeedataService.employee;
   }
 
   onSubmit(): void {
@@ -42,9 +49,6 @@ export class EditEmployeeComponent implements OnInit{
       }
     );
 
-    {
-      this.router.navigate(['/employee']);
-    };
   }
 
 
