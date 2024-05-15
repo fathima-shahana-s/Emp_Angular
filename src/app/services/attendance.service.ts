@@ -4,8 +4,7 @@ import { Observable } from 'rxjs';
 import { Attendance } from '../models/attendance.model';
 import { saveAs } from 'file-saver-es';
 
-const baseUrl = 'http://localhost:8080/api/attendance';
-const baseurl='http://localhost:8080/api/getcsv';
+const baseUrl = 'http://localhost:8081/api/attendance';
 
 
 @Injectable({
@@ -54,6 +53,6 @@ export class AttendanceService {
     // this.http.get(`${baseurl}?employee_id=${employee_id}&month=${month}`, { responseType: 'blob' })
     //   .subscribe((response: Blob) => saveAs(response, 'data' + '.csv'));
 
-    return this.http.get(`${baseurl}?employee_id=${employee_id}&month=${month}`, { responseType: 'blob' });
+    return this.http.get(`${baseUrl}?employee_id=${employee_id}&month=${month}`, { responseType: 'blob' });
   }
 }
