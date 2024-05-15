@@ -52,6 +52,7 @@ export class AddEmployeeComponent {
 
   closeForm(): void {
     this.submitted = false;
+    this.dialogRef.close(false);
   }
 
   newEmployee(): void {
@@ -67,4 +68,3 @@ export class AddEmployeeComponent {
   }
 
 }
-//EmployeeTest
