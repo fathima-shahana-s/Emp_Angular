@@ -16,7 +16,7 @@ export class ExportAttendanceComponent {
 
   exportatt:Exportatt={
     employee_id:0,
-    month:0,
+    month:'',
   };
 
   constructor(
