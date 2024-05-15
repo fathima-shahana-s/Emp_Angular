@@ -12,9 +12,9 @@ import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.comp
 
 
 @Component({
-  standalone:true,
+  standalone: true,
   selector: 'app-home',
-  imports: [EmployeeListComponent,AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent,ExportAttendanceComponent,AttendanceDeleteComponent,AttendanceListComponent,AttendanceEditComponent],
+  imports: [EmployeeListComponent, AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent, ExportAttendanceComponent, AttendanceDeleteComponent, AttendanceListComponent, AttendanceEditComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -23,12 +23,11 @@ import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.comp
 export class HomeComponent {
   constructor(private dialog: MatDialog) { }
 
-ngOnInit(): void {
+  ngOnInit(): void {
 
 
-}
-
-
+  }
+  
   openDialog(dialogType: string): void {
     if (dialogType === 'editEmployee') {
       this.dialog.open(EditEmployeeComponent, {
@@ -58,14 +57,14 @@ ngOnInit(): void {
         // You can adjust the width as per your requirement
       });
     }
-    else if(dialogType=='attendanceDelete') {
+    else if (dialogType == 'attendanceDelete') {
       this.dialog.open(AttendanceDeleteComponent, {
-        hasBackdrop:true,
+        hasBackdrop: true,
       });
     }
-    else if(dialogType=='deleteEmployee') {
+    else if (dialogType == 'deleteEmployee') {
       this.dialog.open(EmployeeDeleteComponent, {
-        hasBackdrop:true,
+        hasBackdrop: true,
       });
     }
   }

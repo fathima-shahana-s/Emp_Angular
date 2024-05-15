@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
+import { EmployeeDataService } from 'src/app/services/employeedata.service';
 
 
 @Component({
@@ -16,13 +17,13 @@ export class AddEmployeeComponent {
   employee: Employee = {
     dept: '',
     email: '',
-    employee_id: -1,
+    employee_id: undefined,
     name: '',
     other_details: '',
   };
   submitted = false;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private employeedataservice :EmployeeDataService) { }
 
   saveEmployee(): void {
     const data = {
@@ -38,6 +39,7 @@ export class AddEmployeeComponent {
         next: (res: any) => {
           console.log(res);
           this.submitted = true;
+          this.employeedataservice.setEmployeeAdded(true);
         },
         error: (e: any) => console.error(e)
       });
