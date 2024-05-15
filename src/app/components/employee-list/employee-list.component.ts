@@ -32,18 +32,34 @@ export class EmployeeListComponent implements OnInit {
     this.retrieveEmployee();
     this.employeeDataService.employeeAdded$.subscribe((added) => {
       if (added) {
+        console.log("added new emp")
         this.refreshList();
         this.employeeDataService.setEmployeeAdded(false); // Reset flag
       }
     });
   }
+  ngOnChanges(): void {
+    this.employeeDataService.employeeAdded$.subscribe((added) => {
+      if (added) {
+        this.refreshList();
+        this.employeeDataService.setEmployeeAdded(false); // Reset flag
+      }
+    });
+    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+    //Add '${implements OnChanges}' to the class.
+
+  }
+  
+  updateemployee(emp: Employee): void {
+    this.employeeDataService.passEmployeeData(emp);
+  }
+
 
   retrieveEmployee(): void {
     this.employeeService.getAll()
       .subscribe({
         next: (data) => {
           this.employees = data;
-          console.log(data);
         },
         error: (e) => console.error(e)
       });

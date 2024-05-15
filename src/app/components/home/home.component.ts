@@ -9,24 +9,28 @@ import { AddAttendanceComponent } from '../add-attendance/add-attendance.compone
 import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.component';
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
+import { EmployeeDataService } from 'src/app/services/employeedata.service';
+import { Employee } from 'src/app/models/employee.model';
 
 
 @Component({
-  standalone:true,
+  standalone: true,
   selector: 'app-home',
-  imports: [EmployeeListComponent,AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent,ExportAttendanceComponent,AttendanceDeleteComponent,AttendanceListComponent,AttendanceEditComponent],
+  imports: [EmployeeListComponent, AddEmployeeComponent, AddAttendanceComponent, EditEmployeeComponent, ExportAttendanceComponent, AttendanceDeleteComponent, AttendanceListComponent, AttendanceEditComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 
 
 export class HomeComponent {
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog,private employeeDataService:EmployeeDataService) { }
 
-ngOnInit(): void {
+  ngOnInit(): void {
 
 
-}
+  }
+
+
 
 
   openDialog(dialogType: string): void {
@@ -58,14 +62,14 @@ ngOnInit(): void {
         // You can adjust the width as per your requirement
       });
     }
-    else if(dialogType=='attendanceDelete') {
+    else if (dialogType == 'attendanceDelete') {
       this.dialog.open(AttendanceDeleteComponent, {
-        hasBackdrop:true,
+        hasBackdrop: true,
       });
     }
-    else if(dialogType=='deleteEmployee') {
+    else if (dialogType == 'deleteEmployee') {
       this.dialog.open(EmployeeDeleteComponent, {
-        hasBackdrop:true,
+        hasBackdrop: true,
       });
     }
   }
