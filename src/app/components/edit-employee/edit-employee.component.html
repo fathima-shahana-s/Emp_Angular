@@ -24,7 +24,9 @@
 
         <label for="email">Email</label>
         <input class="form-control" id="email" required [(ngModel)]="employee.email" name="email" />
-
-        <button type="submit">Save Changes</button>
+        <div class="button-container">
+          <button type="submit">Save Changes</button>
+          <button type="button" (click)="onClose()">Cancel</button>
+        </div>
    </form>
   </div>

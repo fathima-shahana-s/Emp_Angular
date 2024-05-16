@@ -3,7 +3,7 @@ import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { EmployeeDataService } from 'src/app/services/employeedata.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class EditEmployeeComponent implements OnInit{
     private router: Router,
     private employeeService: EmployeeService,
     private employeedataService:EmployeeDataService,
-    private dialog :MatDialog
+    private dialog :MatDialogRef<EditEmployeeComponent>
   ) {
     // this.employee = this.employeedataService.employee;
   }
@@ -43,12 +43,17 @@ export class EditEmployeeComponent implements OnInit{
     this.employeeService.update(this.employee.employee_id, this.employee).subscribe(
       () => {
         console.log('Employee updated successfully');
+        this.employeedataService.setEmployeeAdded(true);
       },
       (error) => {
         console.error('Error updating employee:', error);
       }
     );
 
+  }
+
+  onClose():void{
+    this.dialog.close(false);
   }
 
 

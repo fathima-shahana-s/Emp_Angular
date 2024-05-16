@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import 'jest';
+import { FormsModule } from '@angular/forms';
 import { AttendanceEditComponent } from './attendance-edit.component';
 
 describe('AttendanceEditComponent', () => {
@@ -8,7 +8,8 @@ describe('AttendanceEditComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AttendanceEditComponent]
+      imports: [FormsModule],
+      declarations: [AttendanceEditComponent]
     })
     .compileComponents();
     

@@ -15,11 +15,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class AddAttendanceComponent {
 
-  attendance: Attendance = {
-    employee_id:0,
-    date: new Date("Fri Dec 08 2019 07:44:57"),
-    status: "",
-  };
+  attendance: Attendance ={};
   submitted = false;
 
   constructor(
@@ -27,13 +23,8 @@ export class AddAttendanceComponent {
     private attendanceService: AttendanceService,private attendanceDataService: AttendanceDataService) { }
 
   saveAttendance(): void {
-    const data = {
-      employee_id: this.attendance.employee_id,
-      date: this.attendance.date,
-      status: this.attendance.status,
-    };
 
-    this.attendanceService.create(data)
+    this.attendanceService.create(this.attendance)
       .subscribe({
         next: (res: any) => {
           console.log(res);
@@ -48,7 +39,7 @@ export class AddAttendanceComponent {
     this.submitted = false;
     this.dialogRef.close(false);
   }
-  
+
   newAttendance(): void {
     this.submitted = false;
     this.attendance = {
