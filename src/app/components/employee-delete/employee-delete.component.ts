@@ -31,7 +31,7 @@ export class EmployeeDeleteComponent implements OnInit {
       () => {
         console.log('Employee deleted:', this.employee);
         this.submitted = true;
-        // this.employeeDataService.setEmployeeAdded(true);
+        this.employeeDataService.setEmployeeAdded(true);
         this.dialogRef.close(true);
       },
       error => {

@@ -35,6 +35,7 @@ export class AttendanceDeleteComponent {
         next: (res) => {
           this.submitted = true;
           this.attendanceDataService.setAttendanceAdded(true);
+          this.dialogRef.close(true);
         },
         error: (e) => console.error(e)
       });

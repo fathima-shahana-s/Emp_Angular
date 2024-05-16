@@ -33,7 +33,6 @@ export class AttendanceListComponent implements OnInit {
     this.retrieveAttendance();
     this.attendanceDataService.attendanceAdded$.subscribe((added) => {
       if (added) {
-        console.log("added new att")
         this.refreshList();
         this.attendanceDataService.setAttendanceAdded(false); // Reset flag
       }
