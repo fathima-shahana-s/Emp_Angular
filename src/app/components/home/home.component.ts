@@ -68,9 +68,11 @@ export class HomeComponent {
       });
     }
     else if (dialogType == 'deleteEmployee') {
-      this.dialog.open(EmployeeDeleteComponent, {
-        hasBackdrop: true,
-      });
+      console.log("Employee data before opening dialog:", Employee);  // Log employee data
+    this.dialog.open(EmployeeDeleteComponent, {
+      hasBackdrop: true,
+      data: { Employee }
+    });
     }
   }
 

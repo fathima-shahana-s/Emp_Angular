@@ -33,6 +33,7 @@ export class EmployeeService {
   }
 
   delete(id: any): Observable<any> {
+    console.log(` ${baseUrl}/${id} `)
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
