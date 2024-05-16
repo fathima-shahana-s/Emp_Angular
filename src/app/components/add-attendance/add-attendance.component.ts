@@ -42,11 +42,7 @@ export class AddAttendanceComponent {
 
   newAttendance(): void {
     this.submitted = false;
-    this.attendance = {
-      employee_id: 0,
-      date: new Date("Fri Dec 08 2019 07:44:57"),
-      status: "",
-    };
+    this.attendance = {};
   }
 
 }
