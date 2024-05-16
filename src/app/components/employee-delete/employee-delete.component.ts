@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
+import { EmployeeDataService } from 'src/app/services/employeedata.service';
 
 @Component({
   selector: 'app-employee-delete',
@@ -9,32 +10,28 @@ import { EmployeeService } from '../../services/employee.service';
   styleUrls: ['./employee-delete.component.css']
 })
 export class EmployeeDeleteComponent implements OnInit {
-  employee: Employee;
+  employee: Employee={};
+  submitted:boolean=false;
 
   constructor(
     public dialogRef: MatDialogRef<EmployeeDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { employee: Employee },
-    private employeeService: EmployeeService // Inject EmployeeService
+    private employeeService: EmployeeService,
+    private employeeDataService:EmployeeDataService// Inject EmployeeService
   ) {
-    this.employee = {};
+
    }
 
   ngOnInit(): void {
-    this.employee = this.data.employee; // Access employee object from injected data
-    if (this.data && this.data.employee) {
-      this.employee = this.data.employee; // Access employee object from injected data
-    } else {
-      // Handle the case when data or employee is null
-      console.error('Error: No employee data provided.');
-      // Optionally, close the dialog or handle the error in another way
-      this.dialogRef.close(false);
-    }
+    this.employee = this.employeeDataService.employee;
   }
 
   onDelete(): void {
     this.employeeService.delete(this.employee?.employee_id).subscribe(
       () => {
         console.log('Employee deleted:', this.employee);
+        this.submitted = true;
+        this.employeeDataService.setEmployeeAdded(true);
         this.dialogRef.close(true);
       },
       error => {

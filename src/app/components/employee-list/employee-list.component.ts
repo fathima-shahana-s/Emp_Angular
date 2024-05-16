@@ -40,6 +40,10 @@ export class EmployeeListComponent implements OnInit {
     );
   }
 
+  sendEmp(employee:Employee):void{
+    this.employeedataService.passEmployeeData(employee);
+  }
+
   retrieveEmployee(): void {
     this.employeeService.getAll()
       .subscribe({

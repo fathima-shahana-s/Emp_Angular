@@ -40,6 +40,10 @@ export class AttendanceListComponent implements OnInit {
     });
   }
 
+  sendAtt(data:Attendance):void{
+    this.attendanceDataService.passAttendanceData(data);
+  }
+
   retrieveAttendance(): void {
     this.AttendanceService.getAll()
       .subscribe({
