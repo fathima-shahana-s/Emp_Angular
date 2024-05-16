@@ -3,7 +3,7 @@ import { Attendance } from 'src/app/models/attendance.model';
 import { AttendanceService } from 'src/app/services/attendance.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AttendanceDataService } from 'src/app/services/attendancedata.service';
 
 @Component({
@@ -22,7 +22,7 @@ export class AttendanceEditComponent implements OnInit {
     private router: Router,
     private attendanceService: AttendanceService,
     private attendancedataService: AttendanceDataService,
-    private dialog: MatDialog
+    private dialog: MatDialogRef<AttendanceEditComponent>
   ) { 
     //this.attendance = this.attendancedataService.attendance;
   }
@@ -48,5 +48,9 @@ export class AttendanceEditComponent implements OnInit {
         console.error('Error updating attendance:', error);
       }
     );
+  }
+
+  onClose():void{
+    this.dialog.close(false);
   }
 }
