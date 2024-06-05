@@ -1,29 +1,29 @@
 <div class="dialog">
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" [formGroup]="employeedit">
 
         <label for="employee_id">Employee ID</label>
-        <input type="text" class="form-control" id="employee_id" required [(ngModel)]="employee.employee_id"
+        <input type="text" class="form-control form-control-lg" id="employee_id" formControlName="employee.employee_id"
           name="employee_id" />
 
 
 
         <label for="dept">Department</label>
-        <input [(ngModel)]="employee.dept" class="form-control" id="dept" required name="dept" />
+        <input type="text" class="form-control" class="form-control form-control-lg" id="dept" formControlName="dept" />
 
 
         <label for="other_details">Other Details</label>
-        <input class="form-control" id="other_details" required [(ngModel)]="employee.other_details"
+        <input type="text" class="form-control form-control-lg" id="other_details" formControlName="employee.other_details"
           name="other_details" />
 
 
 
         <label for="name">Name</label>
-        <input class="form-control" id="name" required [(ngModel)]="employee.name" name="name" />
+        <input type="text" class="form-control form-control-lg" id="name" formControlName="employee.name" name="name" />
 
 
 
         <label for="email">Email</label>
-        <input class="form-control" id="email" required [(ngModel)]="employee.email" name="email" />
+        <input type="text" class="form-control form-control-lg" id="email" formControlName="employee.email" name="email" />
         <div class="button-container">
           <button type="submit">Save Changes</button>
           <button type="button" (click)="onClose()">Cancel</button>
