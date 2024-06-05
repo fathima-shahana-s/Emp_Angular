@@ -1,7 +1,7 @@
 import { Component,OnInit,Input } from '@angular/core';
 import { Employee } from '../../models/employee.model';
 import { EmployeeService } from '../../services/employee.service';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
@@ -10,7 +10,7 @@ import { EmployeeDataService } from 'src/app/services/employeedata.service';
 @Component({
   selector: 'app-edit-employee',
   standalone: true,
-  imports:[FormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.css']
 })

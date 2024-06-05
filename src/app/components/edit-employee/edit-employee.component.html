@@ -2,7 +2,7 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="employeedit">
 
         <label for="employee_id">Employee ID</label>
-        <input type="text" class="form-control form-control-lg" id="employee_id" formControlName="employee.employee_id"
+        <input type="text" class="form-control form-control-lg" id="employee_id" formControlName="employee_id"
           name="employee_id" />
 
 
@@ -12,18 +12,18 @@
 
 
         <label for="other_details">Other Details</label>
-        <input type="text" class="form-control form-control-lg" id="other_details" formControlName="employee.other_details"
+        <input type="text" class="form-control form-control-lg" id="other_details" formControlName="other_details"
           name="other_details" />
 
 
 
         <label for="name">Name</label>
-        <input type="text" class="form-control form-control-lg" id="name" formControlName="employee.name" name="name" />
+        <input type="text" class="form-control form-control-lg" id="name" formControlName="name" name="name" />
 
 
 
         <label for="email">Email</label>
-        <input type="text" class="form-control form-control-lg" id="email" formControlName="employee.email" name="email" />
+        <input type="text" class="form-control form-control-lg" id="email" formControlName="email" name="email" />
         <div class="button-container">
           <button type="submit">Save Changes</button>
           <button type="button" (click)="onClose()">Cancel</button>
