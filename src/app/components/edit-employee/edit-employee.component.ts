@@ -63,6 +63,8 @@ export class EditEmployeeComponent implements OnInit{
   }
 
   onClose():void{
+    this.employeedit.reset();
+    this.employeedataService.employee = null;; // Clear employee data from service
     this.dialog.close(false);
   }
 
