@@ -16,8 +16,8 @@ import { EmployeeDataService } from 'src/app/services/employeedata.service';
 })
 export class EditEmployeeComponent implements OnInit{
   employeedit: FormGroup;
-
   employee: Employee = {};
+  isEditing: boolean = false; // Flag to control form visibility
 
   constructor(
     private route: ActivatedRoute,
@@ -26,27 +26,63 @@ export class EditEmployeeComponent implements OnInit{
     private employeedataService:EmployeeDataService,
     private dialog :MatDialogRef<EditEmployeeComponent>,
     private formBuilder: FormBuilder
+    
   ) {
     this.employee = this.employeedataService.employee;
     this.employeedit = this.formBuilder.group({
-      employee_id: [this.employee.employee_id, Validators.required],
-      dept: [this.employee.dept, Validators.required],
-      other_details: [this.employee.other_details, Validators.required],
-      name: [this.employee.name, Validators.required],
-      email: [this.employee.email, Validators.required]
+      employee_id: ['', Validators.required],
+      dept: ['', Validators.required],
+      other_details: ['', Validators.required],
+      name: ['', Validators.required],
+      email: ['', Validators.required]
     });
   }
 
   ngOnInit(): void {
     //this.employee = this.employeedataService.employee;
-    console.log(this.employee)
-    this.employeeService.get(this.employee.employee_id).subscribe((employee: Employee) => {
-      this.employee = employee;
-    });
+   //console.log(this.employee)
+    //this.employeeService.get(this.employee.employee_id).subscribe((employee: Employee) => {
+      //this.employee = employee;
+    //});
+    const employeeIdFromRoute = this.activatedRoute.snapshot.paramMap.get('id'); // Get employee ID from route parameter
+    if (employeeIdFromRoute) {
+      this.fetchEmployee(parseInt(employeeIdFromRoute)); // Fetch data based on ID
+    }
 
   }
-  ngOnChanges(): void {
-    this.employee = this.employeedataService.employee;
+  //ngOnChanges(): void {
+    //this.employee = this.employeedataService.employee;
+    //if (this.employee) {
+      //this.employeedit.patchValue(this.employee);
+    //}
+  //}
+
+  fetchEmployee(employeeId: number): void {
+    this.employeeService.get(employeeId).subscribe((employee: Employee) => {
+      this.employee = employee;
+      this.employeedit.patchValue(employee);
+      this.isEditing = true; // Show form after data is fetched
+    });
+  }
+
+  openEditForm(): void {
+    // 1. Get the employee ID from user input
+    let employeeId: number | null = null; // Initialize to null
+    const userInputId = (document.getElementById('employeeIdInput') as HTMLInputElement)?.value;
+ // Replace with your ID element selector
+    if (userInputId) {
+      employeeId = parseInt(userInputId);
+    }
+  
+    // 2. Validate and handle missing ID
+    
+    if (!employeeId) {
+      console.error('Please enter a valid Employee ID.');
+      return; // Prevent further execution if ID is missing
+    }
+  
+    // 3. If valid ID, proceed with fetching data
+    this.fetchEmployee(employeeId);
   }
 
   onSubmit(): void {
@@ -62,9 +98,9 @@ export class EditEmployeeComponent implements OnInit{
 
   }
 
-  onClose():void{
+   onClose(): void {
     this.employeedit.reset();
-    this.dialog.close(false);
+    this.isEditing = false;
   }
 
 }
