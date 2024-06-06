@@ -12,6 +12,7 @@ import { EmployeeDataService } from 'src/app/services/employeedata.service';
   templateUrl: './edit-employee.component.html',
   styleUrls: ['./edit-employee.component.css']
 })
+
 // export class EditEmployeeComponent implements OnInit{
 //   employeedit: FormGroup;
 
@@ -73,6 +74,7 @@ import { EmployeeDataService } from 'src/app/services/employeedata.service';
 //   }
 
 // }
+
 export class EditEmployeeComponent implements OnInit, OnChanges {
   employee: Employee={};
   employeedit: FormGroup;
@@ -131,8 +133,6 @@ export class EditEmployeeComponent implements OnInit, OnChanges {
     );
 
   }
-
-
    onClose(): void {
     this.dialog.close()
     this.employeedit.reset();
