@@ -118,19 +118,23 @@ export class EditEmployeeComponent implements OnInit, OnChanges {
   }
 
   onSubmit(): void {
+    this.employee = {employee_id:this.employeedit.get('employee_id')!.value,dept:this.employeedit.get('dept')!.value,email:this.employeedit.get('email')!.value,name:this.employeedit.get('name')!.value,other_details:this.employeedit.get('other_details')!.value}
     this.employeeService.update(this.employee.employee_id, this.employee).subscribe(
       () => {
         console.log('Employee updated successfully');
+        this.dialog.close();
         this.employeedataService.setEmployeeAdded(true);
       },
       (error) => {
         console.error('Error updating employee:', error);
       }
     );
+
   }
 
 
    onClose(): void {
+    this.dialog.close()
     this.employeedit.reset();
     this.isEditing = false;
   }
