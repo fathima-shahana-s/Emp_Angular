@@ -4,31 +4,28 @@
     <li><a href="#">Employee Management System</a></li>
   </ul>
 </nav>
-<br>
+
+<div class="add">
+  <button mat-button (click)="openDialog('addEmployee')">Add Employee</button>
+</div>
 <app-employee-list></app-employee-list>
 <br>
 <br>
 <br>
-<div class="add">
-<button mat-button (click)="openDialog('addEmployee')">Add Employee</button>
+<br>
+
+
+<br>
+<div class="addatt">
+  <button mat-button (click)="openDialog('addAttendance')">Add Attendance</button>
 </div>
-<br>
-
-
-<br>
-
 <app-attendance-list></app-attendance-list>
 <br>
 <br>
 <br>
-<div class="comb">
-
-<div class="addatt">
-  <button mat-button (click)="openDialog('addAttendance')">Add Attendance</button>
-  </div>
-  <div class="export">
-    <button mat-button (click)="openDialog('exportAttendance')">Export CSV</button><br>
-    </div>
+<div class="export">
+  <button mat-button (click)="openDialog('exportAttendance')">Export CSV</button><br>
 </div>
-  <br>
+<br>
+<!--<div class="comb"></div>-->
 

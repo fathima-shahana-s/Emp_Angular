@@ -21,7 +21,7 @@
         <td>
           <div class="comb">
             <div class="editemp">
-              <button mat-button (click)="openDialog('editEmployee');sendEmp(employee)">Edit</button>
+              <button mat-button (click)="sendEmp(employee);openDialog('editEmployee');">Edit</button>
             </div>
             <div class="dltemp">
               <button mat-button (click)="openDialog('deleteEmployee');sendEmp(employee)">Delete</button>

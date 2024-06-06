@@ -76,12 +76,14 @@ import { EmployeeDataService } from 'src/app/services/employeedata.service';
 export class EditEmployeeComponent implements OnInit, OnChanges {
   employee: Employee={};
   employeedit: FormGroup;
+  isEditing: boolean = false; // Flag to control form visibility
 
   constructor(
     private employeeService: EmployeeService,
     private employeedataService: EmployeeDataService,
     private dialog: MatDialogRef<EditEmployeeComponent>,
     private formBuilder: FormBuilder
+
   ) {
     this.employee = this.employeedataService.employee;
     this.employeedit = this.formBuilder.group({
@@ -127,8 +129,9 @@ export class EditEmployeeComponent implements OnInit, OnChanges {
     );
   }
 
-  onClose(): void {
+
+   onClose(): void {
     this.employeedit.reset();
-    this.dialog.close(false);
+    this.isEditing = false;
   }
 }
