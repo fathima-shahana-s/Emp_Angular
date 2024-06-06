@@ -28,6 +28,7 @@ export class EditEmployeeComponent implements OnInit{
     private formBuilder: FormBuilder
     
   ) {
+    
     this.employee = this.employeedataService.employee;
     this.employeedit = this.formBuilder.group({
       employee_id: ['', Validators.required],
