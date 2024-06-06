@@ -64,6 +64,7 @@ export class EditEmployeeComponent implements OnInit{
   }
 
   onClose():void{
+    this.employeedit.reset();
     this.dialog.close(false);
   }
 
