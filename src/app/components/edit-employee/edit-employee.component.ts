@@ -27,6 +27,7 @@ export class EditEmployeeComponent implements OnInit{
     private dialog :MatDialogRef<EditEmployeeComponent>,
     private formBuilder: FormBuilder
   ) {
+    
     this.employee = this.employeedataService.employee;
     this.employeedit = this.formBuilder.group({
       employee_id: [this.employee.employee_id, Validators.required],
