@@ -27,7 +27,8 @@ nav ul li a {
     background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
-    margin-left: 75px;
+    margin-left:1200px;
+    margin-top: 10px;
     padding: 5px 10px; /* Add some padding for spacing */
   }
 
@@ -35,10 +36,13 @@ nav ul li a {
     background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
-    margin-left: 75px;
+    margin-left: 1200px;
     padding: 5px 10px; /* Add some padding for spacing */
   }
 
+  .add{
+    width: 100%;
+  }
   .editatt button[mat-button]{
     background-color: rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
@@ -51,7 +55,8 @@ nav ul li a {
     background-color: red; /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
-    margin-right: 75px;
+    margin-right: 50px;
+    margin-left: 600px;
     padding: 5px 10px; /* Add some padding for spacing */
   }
   .comb {
@@ -59,6 +64,7 @@ nav ul li a {
     justify-content: space-between; /* Aligns buttons horizontally */
     margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
     margin-bottom: 10px;
+    margin: 50px;
   }
 
   .dltatt button[mat-button]{

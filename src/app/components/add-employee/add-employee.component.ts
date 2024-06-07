@@ -58,11 +58,6 @@ export class AddEmployeeComponent {
   newEmployee(): void {
     this.submitted = false;
     this.employee = {
-      dept: '',
-      email: '',
-      employee_id: -1,
-      name: '',
-      other_details: '',
     };
 
   }

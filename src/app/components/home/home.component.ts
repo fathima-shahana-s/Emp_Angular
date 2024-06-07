@@ -50,23 +50,23 @@ export class HomeComponent {
         // You can adjust the width as per your requirement
       });
     }
-    else if (dialogType === 'addAttendance') {
-      this.dialog.open(AddAttendanceComponent, {
-        hasBackdrop: true,
-        // You can adjust the width as per your requirement
-      });
-    }
-    else if (dialogType === 'editAttendance') {
-      this.dialog.open(AttendanceEditComponent, {
-        hasBackdrop: true,
-        // You can adjust the width as per your requirement
-      });
-    }
-    else if (dialogType == 'attendanceDelete') {
-      this.dialog.open(AttendanceDeleteComponent, {
-        hasBackdrop: true,
-      });
-    }
+    // else if (dialogType === 'addAttendance') {
+    //   this.dialog.open(AddAttendanceComponent, {
+    //     hasBackdrop: true,
+    //     // You can adjust the width as per your requirement
+    //   });
+    // }
+    // else if (dialogType === 'editAttendance') {
+    //   this.dialog.open(AttendanceEditComponent, {
+    //     hasBackdrop: true,
+    //     // You can adjust the width as per your requirement
+    //   });
+    // }
+    // else if (dialogType == 'attendanceDelete') {
+    //   this.dialog.open(AttendanceDeleteComponent, {
+    //     hasBackdrop: true,
+    //   });
+    // }
     else if (dialogType == 'deleteEmployee') {
       console.log("Employee data before opening dialog:", Employee);  // Log employee data
     this.dialog.open(EmployeeDeleteComponent, {
