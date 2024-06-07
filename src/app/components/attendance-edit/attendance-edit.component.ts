@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { Attendance } from 'src/app/models/attendance.model';
 import { AttendanceService } from 'src/app/services/attendance.service';
-//import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import {
   FormBuilder,
   FormGroup,
@@ -14,12 +14,13 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AttendanceDataService } from 'src/app/services/attendancedata.service';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-attendance-edit',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule,CommonModule,FormsModule],
   templateUrl: './attendance-edit.component.html',
   styleUrls: ['./attendance-edit.component.css'],
 })

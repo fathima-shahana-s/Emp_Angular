@@ -19,8 +19,9 @@
           class="form-control"
           id="name"
           required
-          formControlName="employeename"
-          name="employeename"
+          formControlName="employee_id"
+          
+          
         >
         <option *ngFor="let employee of employees" [value]="employee.employee_id">
           {{ employee.name }}
