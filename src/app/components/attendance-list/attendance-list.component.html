@@ -4,7 +4,7 @@
     <thead>
       <tr>
         <th>Attendance ID</th>
-        <th>Employee ID</th>
+        <th>Employee Name</th>
         <th>date</th>
         <th>status</th>
         <th>Actions</th>
@@ -14,7 +14,7 @@
     <tbody>
         <tr *ngFor="let attendance of attendances">
          <td>{{ attendance.attendance_id }}</td>
-          <td>{{ attendance.employee_id }}</td>
+          <td>{{ attendance.employeeName }}</td>
           <td>{{ attendance.date }}</td>
           <td>{{ attendance.status }}</td>
           <td>
