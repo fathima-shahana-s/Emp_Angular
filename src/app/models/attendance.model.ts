@@ -3,5 +3,6 @@ export class Attendance {
     employee_id?: number;
     date?: Date;
     status?: string;
+    employeeName?:string;
   }
   

@@ -12,6 +12,8 @@ import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delet
 import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { AttendanceDataService } from '../../services/attendancedata.service';
+import { Employee } from 'src/app/models/employee.model';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-attendance-list',
@@ -23,11 +25,14 @@ import { AttendanceDataService } from '../../services/attendancedata.service';
 export class AttendanceListComponent implements OnInit {
 
   attendances: Attendance[]=[];
+  employees:Employee[]=[];
   currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
 
-  constructor(private AttendanceService: AttendanceService, private dialog : MatDialog,private attendanceDataService: AttendanceDataService) { }
+  constructor(
+    private AttendanceService: AttendanceService, private dialog : MatDialog,
+    private attendanceDataService: AttendanceDataService, private employeeService:EmployeeService) { }
 
   ngOnInit(): void {
     this.retrieveAttendance();
@@ -49,6 +54,7 @@ export class AttendanceListComponent implements OnInit {
         next: (data) => {
           if(data.status==200){
             this.attendances = data.result;
+            this.retrieveEmployees();
           }
           else{
             console.error("Error: Data status is not 200");
@@ -56,6 +62,27 @@ export class AttendanceListComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+  }
+
+  retrieveEmployees(): void {
+    this.employeeService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.employees = data;
+          this.mergeAttendanceWithEmployee();
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  mergeAttendanceWithEmployee(): void {
+    this.attendances = this.attendances.map(attendance => {
+      const employee = this.employees.find(emp => emp.employee_id === attendance.employee_id);
+      return {
+        ...attendance,
+        employeeName: employee ? employee.name : 'Unknown'
+      };
+    });
   }
 
   refreshList(): void {
