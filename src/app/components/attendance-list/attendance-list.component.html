@@ -20,10 +20,10 @@
           <td>
             <div class="comb">
               <div class="editatt">
-                <button mat-button (click)="openDialog('editAttendance'); sendAtt(attendance)">Edit</button>
+                <button mat-button (click)=" sendAtt(attendance);openDialog('editAttendance');">Edit</button>
               </div>
               <div class="dltatt">
-                <button mat-button (click)="openDialog('attendanceDelete'); sendAtt(attendance)">Delete</button>
+                <button mat-button (click)="sendAtt(attendance);openDialog('attendanceDelete'); ">Delete</button>
               </div>
             </div>
           </td>
