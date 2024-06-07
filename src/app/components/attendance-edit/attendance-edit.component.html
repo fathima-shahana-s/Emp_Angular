@@ -38,14 +38,17 @@
 
     <div class="form-group">
       <label for="status">Status</label>
-      <input
+      <select
         type="textbox"
         class="form-control"
         id="status"
         required
         [(ngModel)]="attendance.status"
         name="status"
-      />
+      >
+      <option value="present">Present</option>
+      <option value="absent">Absent</option>
+    </select>
     </div>
     <br>
   <div class="button-container">

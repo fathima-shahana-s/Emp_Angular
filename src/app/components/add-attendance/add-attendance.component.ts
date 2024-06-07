@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 import { EmployeeService } from 'src/app/services/employee.service';
@@ -6,24 +6,26 @@ import { FormsModule } from '@angular/forms';
 import { AttendanceDataService } from '../../services/attendancedata.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Employee } from 'src/app/models/employee.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
 
   selector: 'app-add-attendance',
   standalone: true,
-  imports:[FormsModule],
+  imports:[FormsModule,CommonModule],
   templateUrl: './add-attendance.component.html',
   styleUrls: ['./add-attendance.component.css']
 })
-export class AddAttendanceComponent {
+export class AddAttendanceComponent implements OnInit {
 
   attendance: Attendance ={};
-  employee:Employee={};
+  employees:Employee[]=[];
   submitted = false;
 
   constructor(
     public dialogRef: MatDialogRef<AddAttendanceComponent>,
-    private attendanceService: AttendanceService,private attendanceDataService: AttendanceDataService,
+    private attendanceService: AttendanceService,
+    private attendanceDataService: AttendanceDataService,
     private employeeService:EmployeeService) { }
 
     /*ngOnInit(): void {
@@ -31,6 +33,17 @@ export class AddAttendanceComponent {
         this.employee = data;
       });
     }*/
+
+      ngOnInit():void{
+        this.employeeService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.employees = data;
+          console.log('Employee data',data);
+        },
+        error: (e) => console.error(e)
+      });
+      }
 
   saveAttendance(): void {
 
