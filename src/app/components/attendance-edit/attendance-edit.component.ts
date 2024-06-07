@@ -19,7 +19,7 @@ import { EmployeeService } from 'src/app/services/employee.service';
 @Component({
   selector: 'app-attendance-edit',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './attendance-edit.component.html',
   styleUrls: ['./attendance-edit.component.css'],
 })
