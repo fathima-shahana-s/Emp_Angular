@@ -7,7 +7,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AttendanceDataService } from 'src/app/services/attendancedata.service';
 import { Employee } from 'src/app/models/employee.model';
-import { EmployeeService } from 'src/app/services/employee.service';
 
 
 @Component({
