@@ -51,3 +51,20 @@ th {
   margin-left: 5px;
   padding: 5px 10px; /* Add some padding for spacing */
 }
+
+.addatt button[mat-button]{
+  background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+  color: #fff; /* White text color for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 1200px;
+  padding: 5px 10px; /* Add some padding for spacing */
+}
+
+.export button[mat-button]{
+  background-color: red; /*#007bff is the default blue color for primary buttons in Material Design*/
+  color: #fff; /* White text color for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  margin-right: 50px;
+  margin-left: 600px;
+  padding: 5px 10px; /* Add some padding for spacing */
+}
