@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Attendance } from '../models/attendance.model';
 import { saveAs } from 'file-saver-es';
 
-const baseUrl = 'http://localhost:8081/api/attendance';
-const csvurl = 'http://localhost:8081/api/getcsv'
+const baseUrl = 'http://localhost:8080/api/attendance';
+const csvurl = 'http://localhost:8080/api/getcsv'
 
 @Injectable({
   providedIn: 'root'
