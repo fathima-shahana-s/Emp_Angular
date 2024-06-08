@@ -29,7 +29,7 @@ th {
     margin: auto;
   }
 
-    .comb {
+  .comb {
   display: flex;
   justify-content: space-between; /* Aligns buttons horizontally */
   margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
@@ -56,7 +56,7 @@ th {
   background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
-  margin-left: 1200px;
+  margin-left: 100px;
   padding: 5px 10px; /* Add some padding for spacing */
 }
 
@@ -64,7 +64,29 @@ th {
   background-color: red; /*#007bff is the default blue color for primary buttons in Material Design*/
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
-  margin-right: 50px;
-  margin-left: 600px;
+  margin-left: 500px;
+  margin-top: 20px;
   padding: 5px 10px; /* Add some padding for spacing */
+}
+
+/* Styles for the button container */
+.button-container {
+  text-align: left;
+  margin-top: 20px; /* Add some space above the button */
+}
+
+/* Styles for the button */
+.button-container .tohome {
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border-radius: 4px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for the button */
+  text-decoration: none; /* Remove underline from link */
+  display: inline-block; /* Ensure the button behaves like a block-level element */
+}
+
+/* Additional style for the link inside the button */
+.button-container .tohome a {
+  color: #fff; /* Ensure link text is white */
+  text-decoration: none; /* Remove underline from link */
 }
