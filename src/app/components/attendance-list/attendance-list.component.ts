@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
 import { CommonModule } from '@angular/common';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ExportAttendanceComponent } from '../export-attendance/export-attendance.component';
 import { AddEmployeeComponent } from '../add-employee/add-employee.component';
 import { AddAttendanceComponent } from '../add-attendance/add-attendance.component';
@@ -14,11 +14,19 @@ import { EditEmployeeComponent } from '../edit-employee/edit-employee.component'
 import { AttendanceDataService } from '../../services/attendancedata.service';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
-
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { saveAs } from 'file-saver-es';
+import { Exportatt } from 'src/app/models/exportatt';
 @Component({
   selector: 'app-attendance-list',
   standalone: true,
-  imports:[CommonModule],
+  imports:[
+    CommonModule,
+    MatDialogModule,
+    MatButtonModule,
+    FormsModule
+  ],
   templateUrl: './attendance-list.component.html',
   styleUrls: ['./attendance-list.component.css']
 })
@@ -29,6 +37,11 @@ export class AttendanceListComponent implements OnInit {
   currentAttendance: Attendance = {};
   currentIndex = -1;
   title = '';
+  
+  exportatt: Exportatt = {
+    employee_id: 0,
+    month: '',
+  };
 
   constructor(
     private AttendanceService: AttendanceService, private dialog : MatDialog,
@@ -122,22 +135,22 @@ export class AttendanceListComponent implements OnInit {
   }
 
   openDialog(dialogType: string): void {
-    if (dialogType === 'editEmployee') {
-      this.dialog.open(EditEmployeeComponent, {
-        hasBackdrop: true,
-      });
-    } else if (dialogType === 'exportAttendance') {
+    // if (dialogType === 'editEmployee') {
+    //   this.dialog.open(EditEmployeeComponent, {
+    //     hasBackdrop: true,
+    //   });
+     if (dialogType === 'exportAttendance') {
       this.dialog.open(ExportAttendanceComponent, {
         hasBackdrop: true,
         // You can adjust the width as per your requirement
       });
     }
-    else if (dialogType === 'addEmployee') {
-      this.dialog.open(AddEmployeeComponent, {
-        hasBackdrop: true,
-        // You can adjust the width as per your requirement
-      });
-    }
+    // else if (dialogType === 'addEmployee') {
+    //   this.dialog.open(AddEmployeeComponent, {
+    //     hasBackdrop: true,
+    //     // You can adjust the width as per your requirement
+    //   });
+    // }
     else if (dialogType === 'addAttendance') {
       this.dialog.open(AddAttendanceComponent, {
         hasBackdrop: true,
@@ -155,12 +168,19 @@ export class AttendanceListComponent implements OnInit {
         hasBackdrop: true,
       });
     }
-    else if (dialogType == 'deleteEmployee') {
-      this.dialog.open(EmployeeDeleteComponent, {
-        hasBackdrop: true,
-      });
-    }
   }
+    // else if (dialogType == 'deleteEmployee') {
+    //   this.dialog.open(EmployeeDeleteComponent, {
+    //     hasBackdrop: true,
+    //   });
+    // }
+    
+    
+  
+    
+    
+  }
+  
 
 
-}
+

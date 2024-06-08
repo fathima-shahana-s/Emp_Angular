@@ -97,11 +97,11 @@ export class EmployeeListComponent implements OnInit {
       this.dialog.open(EditEmployeeComponent, {
         hasBackdrop: true,
       });
-    } else if (dialogType === 'exportAttendance') {
-      this.dialog.open(ExportAttendanceComponent, {
-        hasBackdrop: true,
-        // You can adjust the width as per your requirement
-      });
+    // } else if (dialogType === 'exportAttendance') {
+      // this.dialog.open(ExportAttendanceComponent, {
+      //   hasBackdrop: true,
+      //   // You can adjust the width as per your requirement
+      // });
     }
     else if (dialogType === 'addEmployee') {
       this.dialog.open(AddEmployeeComponent, {
@@ -109,23 +109,23 @@ export class EmployeeListComponent implements OnInit {
         // You can adjust the width as per your requirement
       });
     }
-    else if (dialogType === 'addAttendance') {
-      this.dialog.open(AddAttendanceComponent, {
-        hasBackdrop: true,
-        // You can adjust the width as per your requirement
-      });
-    }
-    else if (dialogType === 'editAttendance') {
-      this.dialog.open(AttendanceEditComponent, {
-        hasBackdrop: true,
-        // You can adjust the width as per your requirement
-      });
-    }
-    else if (dialogType == 'attendanceDelete') {
-      this.dialog.open(AttendanceDeleteComponent, {
-        hasBackdrop: true,
-      });
-    }
+    // else if (dialogType === 'addAttendance') {
+    //   this.dialog.open(AddAttendanceComponent, {
+    //     hasBackdrop: true,
+    //     // You can adjust the width as per your requirement
+    //   });
+    // }
+    // else if (dialogType === 'editAttendance') {
+    //   this.dialog.open(AttendanceEditComponent, {
+    //     hasBackdrop: true,
+    //     // You can adjust the width as per your requirement
+    //   });
+    // }
+    // else if (dialogType == 'attendanceDelete') {
+    //   this.dialog.open(AttendanceDeleteComponent, {
+    //     hasBackdrop: true,
+    //   });
+    // }
     else if (dialogType == 'deleteEmployee') {
       this.dialog.open(EmployeeDeleteComponent, {
         hasBackdrop: true,
