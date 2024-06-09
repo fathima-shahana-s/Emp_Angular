@@ -43,7 +43,7 @@
 }
 
 .container-mt-5{
-  margin-top: 85px;
+  margin: 85px 150px;
 }
 /* Table styles */
 table {
@@ -52,13 +52,14 @@ table {
 }
 
 table, th, td {
-  border: 1px solid #ddd; /* Add a thin gray border to all cells */
+  border-bottom: 1px solid #ddd; /* Add a thin gray border to all cells */
   padding: 8px; /* Add padding to cells */
 }
 
 th {
   text-align: left; /* Align table headers to the left */
   background-color: #f2f2f2; /* Light gray background for headers */
+  /*border-top: 1px solid #ddd; /* Add a top border to header cells */
 }
 
 tr{

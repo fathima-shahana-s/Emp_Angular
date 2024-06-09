@@ -13,13 +13,26 @@ table {
   border-collapse: collapse;
 }
 
-th, td {
+table, th, td {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
 th {
   background-color: #f2f2f2;
+}
+
+tr{
+  border-bottom: 1px solid #ddd;
+}
+
+tr:not(:first-child) { /* Target all table rows except the first one */
+  border-top: 1px solid #ddd; /* Add a thin gray border to the top of all rows except the first */
+}
+
+/* Optional: Remove bottom border from the last table row */
+tr:last-child {
+  border-bottom: none;
 }
 
 
@@ -41,6 +54,7 @@ th {
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
   margin-left: 100px;
+  margin-top: 10px;
   padding: 5px 10px; /* Add some padding for spacing */
 }
 
@@ -49,6 +63,7 @@ th {
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
   margin-left: 5px;
+  border:1px solid black;
   padding: 5px 10px; /* Add some padding for spacing */
 }
 
@@ -56,6 +71,7 @@ th {
   background-color: rgb(215, 215, 22); /*#007bff is the default blue color for primary buttons in Material Design*/
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
+  border:1px solid black;
   margin-left: 5px;
   padding: 5px 10px; /* Add some padding for spacing */
 }
@@ -64,9 +80,11 @@ th {
   background-color:rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
-  margin-left: 500px;
+  border:1px solid black;
+  margin-left: 100px;
   margin-top: 20px;
   padding: 5px 10px; /* Add some padding for spacing */
+  display: inline-block;
 }
 
 /* Styles for the button container */
