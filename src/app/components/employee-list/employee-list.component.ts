@@ -12,6 +12,7 @@ import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.comp
 import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { EmployeeDataService } from 'src/app/services/employeedata.service';
 
+
 @Component({
   selector: 'app-employee-list',
   standalone: true,
