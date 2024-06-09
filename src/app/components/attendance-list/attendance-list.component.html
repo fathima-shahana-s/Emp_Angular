@@ -1,5 +1,10 @@
 <div class="container mt-5">
-  <h2>Attendance</h2>
+  <div class=comb>
+    <h2>Attendance</h2>
+    <div class="addatt">
+      <button mat-button (click)="openDialog('addAttendance')">Add Attendance</button>
+    </div>
+  </div>
   <table class="table mt-3">
     <thead>
       <tr>
@@ -29,9 +34,18 @@
           </td>
         </tr>
     </tbody>
-
   </table>
-  
-  
-  
+
+  <div class="comb">
+    <div class="button-container">
+      <button class="tohome"><a href="" routerLink="/">Go to Home</a></button>
+    </div>
+    <div class="export">
+      <button mat-button (click)="openDialog('exportAttendance')">Export CSV</button><br>
+    </div>
+  </div>
+
 </div>
+<br>
+<br>
+<br>
