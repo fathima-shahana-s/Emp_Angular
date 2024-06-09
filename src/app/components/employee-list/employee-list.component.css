@@ -1,5 +1,40 @@
-h2 {
-  text-align: left;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  background-color:rgb(35, 35, 65); /* Light gray background color */
+  position: fixed; /* Fix the navbar to the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the navbar full width */
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255); /* Black text color */
+  font-weight: bold; /* Bold text for the logo */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black; /* Black text color for links */
+}
+
+.nav-links a:hover {
+  color: #666; /* Darker gray hover color */
 }
 
 /* Button styles */
@@ -7,26 +42,40 @@ h2 {
   margin-bottom: 10px;
 }
 
+.container-mt-5{
+  margin-top: 85px;
+}
 /* Table styles */
 table {
-  width: 100%;
-  border-collapse: collapse;
+  width: 100%; /* Make the table full width */
+  border-collapse: collapse; /* Remove default table borders */
 }
 
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
+table, th, td {
+  border: 1px solid #ddd; /* Add a thin gray border to all cells */
+  padding: 8px; /* Add padding to cells */
 }
 
 th {
-  background-color: #f2f2f2;
+  text-align: left; /* Align table headers to the left */
+  background-color: #f2f2f2; /* Light gray background for headers */
 }
 
+tr{
+  border-bottom: 1px solid #ddd;
+}
 
+tr:not(:first-child) { /* Target all table rows except the first one */
+  border-top: 1px solid #ddd; /* Add a thin gray border to the top of all rows except the first */
+}
+
+/* Optional: Remove bottom border from the last table row */
+tr:last-child {
+  border-bottom: none;
+}
 .list {
     text-align: left;
     max-width: 750px;
-    margin: auto;
   }
 
     .comb {
@@ -34,10 +83,9 @@ th {
     justify-content: space-between; /* Aligns buttons horizontally */
     margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
     margin-bottom: 10px;
-  }
-
+    }
   .add button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    background-color: rgb(60, 160, 60); /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
     margin-left:100px;
@@ -46,7 +94,7 @@ th {
   }
 
   .editemp button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+    background-color: rgb(215, 215, 22); /*#007bff is the default blue color for primary buttons in Material Design*/
     color: #fff; /* White text color for better contrast */
     border-radius: 4px; /* Rounded corners */
     margin-left: 5px;
@@ -70,7 +118,7 @@ th {
 
 /* Styles for the button */
 .button-container .tohome {
-  background-color: #007bff; /* Button background color */
+  background-color: #4a96e7; /* Button background color */
   color: #fff; /* Button text color */
   border-radius: 4px; /* Rounded corners */
   padding: 10px 20px; /* Padding for the button */
