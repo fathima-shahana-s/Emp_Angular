@@ -1,107 +1,70 @@
-body {
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
+/* home.component.css */
+
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: white;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color:rgb(56, 3, 56);
+.content {
+  text-align: center;
+}
+
+.header-image {
+  position: absolute;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  color: rgb(8, 8, 36);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.employee-button {
+  background-color: #5e1f5e; /* Blue color */
+  color: white;
+  width: 90px;
+  height: 40px;
+}
+
+.attendance-button {
+  background-color: #59478a; /* Green color */
+  color: white;
+}
+
+.employee-button:hover,
+.attendance-button:hover {
+  opacity: 0.95;
 }
 
 
-
-nav ul li a {
-    display:block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    font-weight: bold;
-}
-.add button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left:1200px;
-    margin-top: 10px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-
-  .addatt button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 1200px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-
-  .add{
-    width: 100%;
-  }
-  .editatt button[mat-button]{
-    background-color: rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 75px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-
-  .export button[mat-button]{
-    background-color: red; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-right: 50px;
-    margin-left: 600px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-  .comb {
-    display: flex;  
-    justify-content: space-between; /* Aligns buttons horizontally */
-    margin-top: 10px;  /* Optional: Add margin for spacing above buttons */
-    margin-bottom: 10px;
-    margin: 50px;
-  }
-
-  .dltatt button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 75px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-
-  .editemp button[mat-button]{
-    background-color: rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 75px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
-
-  
-  .dltemp button[mat-button]{
-    background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-    color: #fff; /* White text color for better contrast */
-    border-radius: 4px; /* Rounded corners */
-    margin-left: 75px;
-    padding: 5px 10px; /* Add some padding for spacing */
-  }
 /*
 .employee{
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .attendance{
-    margin-top: 200px;
-    margin-bottom: 20px;
+  margin-top: 200px;
+  margin-bottom: 20px;
 }
 
 #b2{
-    margin-bottom: 200px;
+  margin-bottom: 200px;
 }
 */

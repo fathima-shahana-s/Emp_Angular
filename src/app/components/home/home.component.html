@@ -29,11 +29,19 @@
 <br>
 <div class="comb"></div>-->
 <!-- home.component.html -->
-<h1>Welcome to the Employee Management System!</h1>
-<nav>
-  <ul>
-    <li><a routerLink="/employees">Go to Employee Page</a></li>
-    <li><a routerLink="/attendance">Go to Attendance Page</a></li>
-  </ul>
-</nav>
+<!-- home.component.html -->
+<!-- home.component.html -->
+<!-- home.component.html -->
+<div class="homepage">
+  <div class="content">
+    <img src="https://i0.wp.com/juntrax.com/blog/wp-content/uploads/2021/01/Employee-Management-System.jpg?resize=1024%2C585&ssl=1" style="width:800px; height:auto;" alt="Management System Image" class="header" />
+    <h1>Employee Management System</h1>
+    <p class="subtitle">View employee and attendance details</p>
+    <div class="buttons">
+      <button mat-button class="employee-button" [routerLink]="['/employees']">Employee</button>
+      <button mat-button class="attendance-button" [routerLink]="['/attendance']">Attendance</button>
+    </div>
+  </div>
+</div>
+
 
