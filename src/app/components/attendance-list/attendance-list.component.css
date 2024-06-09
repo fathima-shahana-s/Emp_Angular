@@ -36,6 +36,14 @@ th {
   margin-bottom: 10px;
 }
 
+.addatt button[mat-button]{
+  background-color:rgb(60,160,60);
+  color: #fff; /* White text color for better contrast */
+  border-radius: 4px; /* Rounded corners */
+  margin-left: 100px;
+  padding: 5px 10px; /* Add some padding for spacing */
+}
+
 .dltatt button[mat-button]{
   background-color:rgb(219, 106, 125);
   color: #fff; /* White text color for better contrast */
@@ -45,23 +53,15 @@ th {
 }
 
 .editatt button[mat-button]{
-  background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
+  background-color: rgb(215, 215, 22); /*#007bff is the default blue color for primary buttons in Material Design*/
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
   margin-left: 5px;
   padding: 5px 10px; /* Add some padding for spacing */
 }
 
-.addatt button[mat-button]{
-  background-color: #007bff; /*#007bff is the default blue color for primary buttons in Material Design*/
-  color: #fff; /* White text color for better contrast */
-  border-radius: 4px; /* Rounded corners */
-  margin-left: 100px;
-  padding: 5px 10px; /* Add some padding for spacing */
-}
-
 .export button[mat-button]{
-  background-color: red; /*#007bff is the default blue color for primary buttons in Material Design*/
+  background-color:rgb(219, 106, 125); /*#007bff is the default blue color for primary buttons in Material Design*/
   color: #fff; /* White text color for better contrast */
   border-radius: 4px; /* Rounded corners */
   margin-left: 500px;

@@ -11,9 +11,7 @@
 </nav>
 
 <div class="container-mt-5">
-  
-   
-  <table id="employee-table" class="table table-striped table-bordered" style="width:100%">
+  <table id="employee-table" class="table table-striped table-bordered">
     <thead>
       <tr>
         <th>ID</th>
@@ -34,10 +32,10 @@
         <td>
           <div class="comb">
             <div class="editemp">
-              <button mat-button (click)="sendEmp(employee);openDialog('editEmployee');">Edit</button>
+              <button mat-button (click)="sendEmp(employee);openDialog('editEmployee');"><i class='bx bx-edit-alt'></i></button>
             </div>
             <div class="dltemp">
-              <button mat-button (click)="sendEmp(employee);openDialog('deleteEmployee');">Delete</button>
+              <button mat-button (click)="sendEmp(employee);openDialog('deleteEmployee');"><i class='bx bx-trash'></i></button>
             </div>
           </div>
         </td>
