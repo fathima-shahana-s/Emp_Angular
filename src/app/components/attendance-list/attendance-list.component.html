@@ -1,10 +1,15 @@
-<div class="container mt-5">
-  <div class=comb>
-    <h2>Attendance</h2>
+<nav class="navbar">
+  <a href="#" class="brand-logo">Employee Attendance Management</a>
+  <ul class="nav-links">
     <div class="addatt">
-      <button mat-button (click)="openDialog('addAttendance')">Add Attendance</button>
-    </div>
-  </div>
+      <button mat-button (click)="openDialog('addAttendance')"> Add Attendance
+        <span class="box-icon box-icon-add-to-queue"></span> 
+       </button>
+      </div>
+  </ul>
+</nav>
+
+<div class="container-mt-5">
   <table class="table mt-3">
     <thead>
       <tr>

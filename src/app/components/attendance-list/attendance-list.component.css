@@ -1,12 +1,49 @@
-h2 {
-  text-align: left;
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  background-color:rgb(35, 35, 65); /* Light gray background color */
+  position: fixed; /* Fix the navbar to the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%; /* Make the navbar full width */
+}
+
+.brand-logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: rgb(255, 255, 255); /* Black text color */
+  font-weight: bold; /* Bold text for the logo */
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black; /* Black text color for links */
+}
+
+.nav-links a:hover {
+  color: #666; /* Darker gray hover color */
 }
 
 /* Button styles */
 .btn {
   margin-bottom: 10px;
 }
-
+.container-mt-5{
+  margin: 85px 150px;
+}
 /* Table styles */
 table {
   width: 100%;
@@ -19,6 +56,7 @@ table, th, td {
 }
 
 th {
+  text-align: left; 
   background-color: #f2f2f2;
 }
 
@@ -39,7 +77,6 @@ tr:last-child {
 .list {
     text-align: left;
     max-width: 750px;
-    margin: auto;
   }
 
   .comb {
@@ -82,7 +119,7 @@ tr:last-child {
   border-radius: 4px; /* Rounded corners */
   border:1px solid black;
   margin-left: 100px;
-  margin-top: 20px;
+  margin-top: 23px;
   padding: 5px 10px; /* Add some padding for spacing */
   display: inline-block;
 }
@@ -95,7 +132,7 @@ tr:last-child {
 
 /* Styles for the button */
 .button-container .tohome {
-  background-color: #007bff; /* Button background color */
+  background-color: #4491e3; /* Button background color */
   color: #fff; /* Button text color */
   border-radius: 4px; /* Rounded corners */
   padding: 10px 20px; /* Padding for the button */
