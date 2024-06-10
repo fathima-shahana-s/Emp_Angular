@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AttendanceService } from '../../services/attendance.service';
 import { Exportatt } from '../../models/exportatt';
 import { saveAs } from 'file-saver-es';

@@ -1,9 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Attendance } from '../../models/attendance.model';
 import { AttendanceService } from '../../services/attendance.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AttendanceDataService } from 'src/app/services/attendancedata.service';
 
 @Component({
@@ -13,7 +12,8 @@ import { AttendanceDataService } from 'src/app/services/attendancedata.service';
   templateUrl: './attendance-delete.component.html',
   styleUrl: './attendance-delete.component.css'
 })
-export class AttendanceDeleteComponent {
+
+export class AttendanceDeleteComponent implements OnInit{
   attendance: Attendance = {};
   submitted: boolean = false;
   constructor(
@@ -23,16 +23,16 @@ export class AttendanceDeleteComponent {
   ) {
     this.attendance = attendanceDataService.attendance;
   }
+
   ngOnInit(): void {
     this.attendance = this.attendanceDataService.attendance;
 
     console.log(this.attendance)
-
   }
   deleteAttendance(): void {
     this.attendanceService.delete(this.attendance.attendance_id??0)
       .subscribe({
-        next: (res) => {
+        next: () => {
           this.submitted = true;
           this.attendanceDataService.setAttendanceAdded(true);
           this.dialogRef.close(true);

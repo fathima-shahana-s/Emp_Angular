@@ -5,18 +5,14 @@ import { AttendanceService } from '../../services/attendance.service';
 import { CommonModule } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ExportAttendanceComponent } from '../export-attendance/export-attendance.component';
-import { AddEmployeeComponent } from '../add-employee/add-employee.component';
 import { AddAttendanceComponent } from '../add-attendance/add-attendance.component';
 import { AttendanceEditComponent } from '../attendance-edit/attendance-edit.component';
 import { AttendanceDeleteComponent } from '../attendance-delete/attendance-delete.component';
-import { EmployeeDeleteComponent } from '../employee-delete/employee-delete.component';
-import { EditEmployeeComponent } from '../edit-employee/edit-employee.component';
 import { AttendanceDataService } from '../../services/attendancedata.service';
 import { Employee } from 'src/app/models/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { saveAs } from 'file-saver-es';
 import { Exportatt } from 'src/app/models/exportatt';
 @Component({
   selector: 'app-attendance-list',
