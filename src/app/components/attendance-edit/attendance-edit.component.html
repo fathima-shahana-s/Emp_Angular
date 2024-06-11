@@ -1,64 +1,64 @@
 <div class="dialog">
-<form (ngSubmit)="onSubmit()" [formGroup]="attendanceedit">
-  <div class="submit-form">
-    <!-- <div class="form-group">
-      <label for="attendance">Attendance Id</label>
-      <input
-        type="number"
-        class="form-control form-control-lg"
-        id="attendance"
-        required
-        formControlName="attendance_id"
-        name="attendance"
-      />
-    </div> -->
-
-    <div class="form-group">
-      <label for="employeename">Employee Name</label>
-      <select 
-          class="form-control"
-          id="name"
+  <form (ngSubmit)="onSubmit()" [formGroup]="attendanceedit">
+    <div class="submit-form">
+      <!-- <div class="form-group">
+        <label for="attendance">Attendance Id</label>
+        <input
+          type="number"
+          class="form-control form-control-lg"
+          id="attendance"
           required
-          formControlName="employee_id"
-          
-          
+          formControlName="attendance_id"
+          name="attendance"
+        />
+      </div> -->
+  
+      <div class="form-group">
+        <label for="employeename">Employee Name</label>
+        <select 
+            class="form-control"
+            id="name"
+            required
+            formControlName="employee_id"
+            
+            
+          >
+          <option *ngFor="let employee of employees" [value]="employee.employee_id">
+            {{ employee.name }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+  
+        <!--<label for="date">Date</label>
+        <input
+          type="date"
+          class="form-control form-control-lg"
+          id="date"
+          required
+          formControlName="date"
+          name="date"
+        />
+      </div>-->
+  
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select
+          type="textbox"
+          class="form-control form-control-lg"
+          id="status"
+          required
+          formControlName="status"
+          name="status"
         >
-        <option *ngFor="let employee of employees" [value]="employee.employee_id">
-          {{ employee.name }}
-        </option>
+        <option value="present">Present</option>
+        <option value="absent">Absent</option>
       </select>
+      </div>
+      <br>
+    <div class="button-container">
+      <button type="submit">Save Changes</button>
+      <button type="button" (click)="onClose()">Cancel</button>
     </div>
-    <div class="form-group">
-
-      <!--<label for="date">Date</label>
-      <input
-        type="date"
-        class="form-control form-control-lg"
-        id="date"
-        required
-        formControlName="date"
-        name="date"
-      />
-    </div>-->
-
-    <div class="form-group">
-      <label for="status">Status</label>
-      <select
-        type="textbox"
-        class="form-control form-control-lg"
-        id="status"
-        required
-        formControlName="status"
-        name="status"
-      >
-      <option value="present">Present</option>
-      <option value="absent">Absent</option>
-    </select>
-    </div>
-    <br>
-  <div class="button-container">
-    <button type="submit">Save Changes</button>
-    <button type="button" (click)="onClose()">Cancel</button>
+  
   </div>
-
-</div>

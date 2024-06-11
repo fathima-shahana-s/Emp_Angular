@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, SimpleChanges } from '@angular/core';
 import { Attendance } from 'src/app/models/attendance.model';
 import { AttendanceService } from 'src/app/services/attendance.service';
 import { FormsModule } from '@angular/forms';
@@ -8,8 +8,6 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-
-import { ActivatedRoute, Router } from '@angular/router';
 import {  MatDialogRef } from '@angular/material/dialog';
 import { AttendanceDataService } from 'src/app/services/attendancedata.service';
 import { Employee } from 'src/app/models/employee.model';
@@ -24,7 +22,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './attendance-edit.component.html',
   styleUrls: ['./attendance-edit.component.css'],
 })
-export class AttendanceEditComponent implements OnInit {
+export class AttendanceEditComponent implements OnChanges {
   attendance: Attendance = {};
   employees: Employee[] = [];
   attendanceedit: FormGroup;
@@ -49,8 +47,6 @@ export class AttendanceEditComponent implements OnInit {
       status: [this.attendance.status, Validators.required],
     });
   }
-
-  ngOnInit(): void {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['attendance']) {
