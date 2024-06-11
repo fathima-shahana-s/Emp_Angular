@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AttendanceService } from '../../services/attendance.service';
 import { Exportatt } from '../../models/exportatt';
 import { saveAs } from 'file-saver-es';
@@ -27,11 +26,11 @@ export class ExportAttendanceComponent {
 
   exportcsv(): void{
 
-    this.attendanceService.getAttendance(this.exportatt.employee_id,this.exportatt.month).subscribe({
-      next:(res:any)=>{
+    this.attendanceService.getAttendance(this.exportatt.employee_id ?? 0,this.exportatt.month ?? '').subscribe({
+      next:(res:Blob)=>{
         saveAs(res, 'data' + '.csv');
       },
-      error: (e: any) => console.error(e)
+      error: (e: Error) => console.error(e)
     });
   }
 

@@ -28,12 +28,6 @@ export class AddAttendanceComponent implements OnInit {
     private attendanceDataService: AttendanceDataService,
     private employeeService:EmployeeService) { }
 
-    /*ngOnInit(): void {
-      this.employeeService.getAll().subscribe((data: any[]) => {
-        this.employee = data;
-      });
-    }*/
-
       ngOnInit():void{
         this.employeeService.getAll()
       .subscribe({
@@ -41,7 +35,7 @@ export class AddAttendanceComponent implements OnInit {
           this.employees = data;
           console.log('Employee data',data);
         },
-        error: (e) => console.error(e)
+        error: (e:Error) => console.error(e)
       });
       }
 
@@ -49,12 +43,12 @@ export class AddAttendanceComponent implements OnInit {
 
     this.attendanceService.create(this.attendance)
       .subscribe({
-        next: (res: any) => {
+        next: (res: Attendance) => {
           console.log(res);
           this.submitted = true;
           this.attendanceDataService.setAttendanceAdded(true);
         },
-        error: (e: any) => console.error(e)
+        error: (e: Error) => console.error(e)
       });
   }
 

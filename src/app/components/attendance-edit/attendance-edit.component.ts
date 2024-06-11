@@ -74,7 +74,7 @@ export class AttendanceEditComponent implements OnChanges {
       status: this.attendanceedit.get('status')!.value,
     };
     this.attendanceService
-      .update(this.attendance.attendance_id, this.attendance)
+      .update(this.attendance.attendance_id ?? 0, this.attendance)
       .subscribe(
         () => {
           console.log('Attendance updated successfully');

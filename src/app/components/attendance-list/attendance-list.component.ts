@@ -60,9 +60,9 @@ export class AttendanceListComponent implements OnInit {
   retrieveAttendance(): void {
     this.AttendanceService.getAll()
       .subscribe({
-        next: (data) => {
-          if(data.status==200){
-            this.attendances = data.result;
+        next: (response: { status: number, result: Attendance[] }) => {
+          if(response.status==200){
+            this.attendances = response.result;
             this.retrieveEmployees();
           }
           else{

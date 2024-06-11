@@ -30,23 +30,14 @@ export class AddEmployeeComponent {
 
 
   saveEmployee(): void {
-
-    const data = {
-      employee_id: this.employee.employee_id,
-      dept: this.employee.dept,
-      email: this.employee.email,
-      name: this.employee.name,
-      other_details: this.employee.other_details,
-    };
-
     this.employeeService.create(this.employee)
       .subscribe({
-        next: (res: any) => {
+        next: (res: Employee) => {
           console.log(res);
           this.submitted = true;
           this.employeedataservice.setEmployeeAdded(true);
         },
-        error: (e: any) => console.error(e)
+        error: (e: Error) => console.error(e)
       });
   }
 
