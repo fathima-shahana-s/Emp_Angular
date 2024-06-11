@@ -1,4 +1,35 @@
-.exportatt{
-  padding: 30px;
+/* export-attendance.component.css */
+.exportatt {
+  max-width: 400px;
+  margin: auto;
+  padding:30px;
   border-radius: 10px;
+  margin-top: 10px;
+}
+
+.wide-select {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.wide-input {
+  width: 100%;
+  box-sizing: border-box;
+  
+}
+
+.form-group {
+  margin-bottom: 10px; /* Space between form groups */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 3px; /* Reduced space between label and input field */
+}
+
+.button-group {
+  margin-top: 10px; /* Added space between input field and buttons */
+  display: flex;
+  gap: 10px; /* Space between buttons */
 }

@@ -3,16 +3,20 @@
 <h4>Export Attendance</h4>
 
 <form>
-  <div>
-    <label for="employee_id">Employee ID:</label>
-    <input type="text" id="employee_id" name="employee_id" required [(ngModel)]="exportatt.employee_id">
+  <div class = "form-group">
+    <label for="employee_id">Employee Name:</label>
+    <select id="employee_id" name="employee_id" required [(ngModel)]="exportatt.employee_id" class="wide-select">
+      <option *ngFor="let employee of employees" [value]="employee.employee_id">{{ employee.name }}</option>
+    </select>  
   </div>
-  <div>
+  <div class = "form-group">
     <label for="month">Month:</label>
-    <input type="text" id="month" name="month" required [(ngModel)]="exportatt.month">
+    <input type="month" id="month" name="month" required [(ngModel)]="exportatt.month" class="wide-input">
   </div>
+  <div class = "button-group">
   <button type="button" (click)="exportcsv()">Export</button>
   <button type="button" (click)="onClose()">Cancel</button>
+  </div>
 </form>
 
 
