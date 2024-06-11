@@ -11,45 +11,44 @@ const csvurl = 'http://localhost:8080/api/getcsv'
   providedIn: 'root'
 })
 export class AttendanceService {
-  data: any
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
+  getAll(): Observable<{ status: number, result: Attendance[] }> {
    //this.data = this.http.get<Attendance[]>(baseUrl)
-    return this.http.get<any>(baseUrl);
+    return this.http.get<{ status: number, result: Attendance[] }>(baseUrl);
   }
 
-  get(id: any): Observable<Attendance> {
+  get(id: number | string): Observable<Attendance> {
     return this.http.get<Attendance>(`${baseUrl}/${id}`);
   }
 
-  create(data: any): Observable<any> {
+  create(data: Attendance): Observable<Attendance> {
     return this.http.post(baseUrl, data);
   }
 
-  update(id: any, data: any): Observable<any> {
+  update(id: number | string, data: Attendance): Observable<Attendance> {
     return this.http.put(`${baseUrl}/${id}`, data);
   }
 
-  delete(id: number): Observable<any> {
+  delete(id: number): Observable<Attendance> {
     console.log(id)
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
+  deleteAll(): Observable<void> {
+    return this.http.delete<void>(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Attendance[]> {
+  findByTitle(title: string): Observable<Attendance[]> {
     return this.http.get<Attendance[]>(`${baseUrl}?title=${title}`);
   }
 
-  public downloadExcel(data:any): void {
+  public downloadExcel<T>(data: { body: T; fileName: string }): void {
     const url: string = '[api endpoint here ]';
     this.http.post(url, data.body, { responseType: 'blob' })
       .subscribe((response: Blob) => saveAs(response, data.fileName + '.xlsx'));
   }
-  getAttendance(employee_id: any, month: any,): Observable<Blob>{
+  getAttendance(employee_id: number | string, month: string,): Observable<Blob>{
     console.log()
     // this.http.get(`${baseurl}?employee_id=${employee_id}&month=${month}`, { responseType: 'blob' })
     //   .subscribe((response: Blob) => saveAs(response, 'data' + '.csv'));

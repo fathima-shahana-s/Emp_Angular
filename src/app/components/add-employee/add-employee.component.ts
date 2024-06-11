@@ -32,12 +32,12 @@ export class AddEmployeeComponent {
   saveEmployee(): void {
     this.employeeService.create(this.employee)
       .subscribe({
-        next: (res: any) => {
+        next: (res: Employee) => {
           console.log(res);
           this.submitted = true;
           this.employeedataservice.setEmployeeAdded(true);
         },
-        error: (e: any) => console.error(e)
+        error: (e: Error) => console.error(e)
       });
   }
 

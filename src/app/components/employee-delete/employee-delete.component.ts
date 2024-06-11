@@ -28,18 +28,20 @@ export class EmployeeDeleteComponent implements OnInit {
   }
 
   onDelete(): void {
-    this.employeeService.delete(this.employee.employee_id).subscribe(
-      () => {
-        console.log('Employee deleted:', this.employee);
-        this.submitted = true;
-        this.employeeDataService.setEmployeeAdded(true);
-        this.dialogRef.close(true);
-      },
-      error => {
-        console.error('Error deleting employee:', error);
-        // Optionally handle error
-      }
-    );
+    if (this.employee.employee_id !== undefined){
+      this.employeeService.delete(this.employee.employee_id).subscribe(
+        () => {
+          console.log('Employee deleted:', this.employee);
+          this.submitted = true;
+          this.employeeDataService.setEmployeeAdded(true);
+          this.dialogRef.close(true);
+        },
+        error => {
+          console.error('Error deleting employee:', error);
+          // Optionally handle error
+        }
+      );
+    }
   }
 
   onClose(): void {

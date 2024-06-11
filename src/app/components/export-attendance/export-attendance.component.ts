@@ -26,11 +26,11 @@ export class ExportAttendanceComponent {
 
   exportcsv(): void{
 
-    this.attendanceService.getAttendance(this.exportatt.employee_id,this.exportatt.month).subscribe({
-      next:(res:any)=>{
+    this.attendanceService.getAttendance(this.exportatt.employee_id ?? 0,this.exportatt.month ?? '').subscribe({
+      next:(res:Blob)=>{
         saveAs(res, 'data' + '.csv');
       },
-      error: (e: any) => console.error(e)
+      error: (e: Error) => console.error(e)
     });
   }
 

@@ -19,28 +19,28 @@ export class EmployeeService {
     return this.http.get<Employee[]>(baseUrl);
   }
 
-  get(id: any): Observable<Employee> {
+  get(id: number | string): Observable<Employee> {
     return this.http.get<Employee>(`${baseUrl}/${id}`);
   }
 
-  create(data: any): Observable<any> {
+  create(data: Employee): Observable<Employee> {
     return this.http.post(baseUrl, data);
   }
 
-  update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data);
+  update(id: number | string, data: Employee): Observable<Employee> {
+    return this.http.put<Employee>(`${baseUrl}/${id}`, data);
   }
 
-  delete(id: any): Observable<any> {
+  delete(id: number | string): Observable<Employee> {
     console.log(` ${baseUrl}/${id} `)
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
+  deleteAll(): Observable<void> {
+    return this.http.delete<void>(baseUrl);
   }
 
-  findByTitle(title: any): Observable<Employee[]> {
+  findByTitle(title: string): Observable<Employee[]> {
     return this.http.get<Employee[]>(`${baseUrl}?title=${title}`);
   }
 }
